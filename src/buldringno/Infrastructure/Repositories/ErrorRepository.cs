@@ -4,7 +4,7 @@ namespace BuldringNo.Infrastructure.Repositories
 {
     public class LoggingRepository : EntityBaseRepository<Error>, ILoggingRepository
     {
-        public LoggingRepository(PhotoGalleryContext context)
+        public LoggingRepository(BuldringNoContext context)
             : base(context)
         { }
 

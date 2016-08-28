@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace BuldringNo.Infrastructure
 {
-    public class PhotoGalleryContext : DbContext
+    public class BuldringNoContext : DbContext
     {
         public DbSet<Photo> Photos { get; set; }
         public DbSet<Album> Albums { get; set; }
@@ -14,7 +14,7 @@ namespace BuldringNo.Infrastructure
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Error> Errors { get; set; }
 
-        public PhotoGalleryContext(DbContextOptions options) : base(options)
+        public BuldringNoContext(DbContextOptions options) : base(options)
         {
         }
 

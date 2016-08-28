@@ -44,7 +44,7 @@ namespace BuldringNo
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<PhotoGalleryContext>(options =>
+            services.AddDbContext<BuldringNoContext>(options =>
                 options.UseSqlServer(Configuration["Data:PhotoGalleryConnection:ConnectionString"]));
 
 

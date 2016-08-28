@@ -4,7 +4,7 @@ namespace BuldringNo.Infrastructure.Repositories
 {
     public class RoleRepository : EntityBaseRepository<Role>, IRoleRepository
     {
-        public RoleRepository(PhotoGalleryContext context)
+        public RoleRepository(BuldringNoContext context)
             : base(context)
         { }
     }

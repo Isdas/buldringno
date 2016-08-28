@@ -6,7 +6,7 @@ namespace BuldringNo.Infrastructure.Repositories
     public class UserRepository : EntityBaseRepository<User>, IUserRepository
     {
         IRoleRepository _roleReposistory;
-        public UserRepository(PhotoGalleryContext context, IRoleRepository roleReposistory)
+        public UserRepository(BuldringNoContext context, IRoleRepository roleReposistory)
             : base(context)
         {
             _roleReposistory = roleReposistory;

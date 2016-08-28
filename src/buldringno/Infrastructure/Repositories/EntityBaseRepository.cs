@@ -13,10 +13,10 @@ namespace BuldringNo.Infrastructure.Repositories
             where T : class, IEntityBase, new()
     {
 
-        private PhotoGalleryContext _context;
+        private BuldringNoContext _context;
 
         #region Properties
-        public EntityBaseRepository(PhotoGalleryContext context)
+        public EntityBaseRepository(BuldringNoContext context)
         {
             _context = context;
         }

@@ -8,10 +8,10 @@ namespace BuldringNo.Infrastructure
 {
     public static class DbInitializer
     {
-        private static PhotoGalleryContext context;
+        private static BuldringNoContext context;
         public static void Initialize(IServiceProvider serviceProvider, string imagesPath)
         {
-            context = (PhotoGalleryContext)serviceProvider.GetService(typeof(PhotoGalleryContext));
+            context = (BuldringNoContext)serviceProvider.GetService(typeof(BuldringNoContext));
 
             InitializePhotoAlbums(imagesPath);
             InitializeUserRoles();
