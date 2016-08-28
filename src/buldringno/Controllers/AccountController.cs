@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using BuldringNo.Infrastructure.Services;
-using BuldringNo.Infrastructure.Repositories;
-using BuldringNo.Entities;
-using BuldringNo.ViewModels;
-using BuldringNo.Infrastructure.Core;
+﻿using BuldringNo.Entities;
 using BuldringNo.Infrastructure;
-using System.Security.Claims;
+using BuldringNo.Infrastructure.Core;
+using BuldringNo.Infrastructure.Repositories;
+using BuldringNo.Infrastructure.Services;
+using BuldringNo.ViewModels;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 

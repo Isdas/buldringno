@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BuldringNo.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using BuldringNo.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

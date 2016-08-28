@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace BuldringNo.Infrastructure.Services
+﻿namespace BuldringNo.Infrastructure.Services
 {
     public interface IEncryptionService
     {
