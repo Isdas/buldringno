@@ -1,12 +1,12 @@
-﻿using buldringno.Entities;
-using buldringno.Infrastructure.Repositories;
+﻿using BuldringNo.Entities;
+using BuldringNo.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
 using System.Threading.Tasks;
 
-namespace buldringno.Infrastructure.Services
+namespace BuldringNo.Infrastructure.Services
 {
     public class MembershipService : IMembershipService
     {

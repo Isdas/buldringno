@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace buldringno.ViewModels
+namespace BuldringNo.ViewModels
 {
     public class LoginViewModel
     {

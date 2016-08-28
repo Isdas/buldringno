@@ -1,10 +1,10 @@
-﻿using buldringno.Entities;
+﻿using BuldringNo.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace buldringno.Infrastructure.Repositories
+namespace BuldringNo.Infrastructure.Repositories
 {
     public interface IAlbumRepository : IEntityBaseRepository<Album> { }
 

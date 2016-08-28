@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using buldringno.Infrastructure.Services;
-using buldringno.Infrastructure.Repositories;
-using buldringno.Entities;
-using buldringno.ViewModels;
-using buldringno.Infrastructure.Core;
-using buldringno.Infrastructure;
+using BuldringNo.Infrastructure.Services;
+using BuldringNo.Infrastructure.Repositories;
+using BuldringNo.Entities;
+using BuldringNo.ViewModels;
+using BuldringNo.Infrastructure.Core;
+using BuldringNo.Infrastructure;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace buldringno.Controllers
+namespace BuldringNo.Controllers
 {
     [Route("api/[controller]")]
     public class AccountController : Controller

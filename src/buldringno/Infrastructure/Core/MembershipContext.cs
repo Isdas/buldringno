@@ -1,11 +1,11 @@
-﻿using buldringno.Entities;
+﻿using BuldringNo.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
 using System.Threading.Tasks;
 
-namespace buldringno.Infrastructure
+namespace BuldringNo.Infrastructure
 {
     public class MembershipContext
     {

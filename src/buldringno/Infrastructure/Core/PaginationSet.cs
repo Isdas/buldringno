@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace buldringno.Infrastructure.Core
+namespace BuldringNo.Infrastructure.Core
 {
     public class PaginationSet<T>
     {

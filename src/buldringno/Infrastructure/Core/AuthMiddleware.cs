@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Primitives;
-using buldringno.Entities;
-using buldringno.Infrastructure.Repositories;
-using buldringno.Infrastructure.Services;
+using BuldringNo.Entities;
+using BuldringNo.Infrastructure.Repositories;
+using BuldringNo.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http.Authentication;
 
-namespace buldringno.Infrastructure.Core
+namespace BuldringNo.Infrastructure.Core
 {
     public class AuthMiddleware
     {

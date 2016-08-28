@@ -1,7 +1,7 @@
-﻿using buldringno.Infrastructure;
-using buldringno.Infrastructure.Mappings;
-using buldringno.Infrastructure.Repositories;
-using buldringno.Infrastructure.Services;
+﻿using BuldringNo.Infrastructure;
+using BuldringNo.Infrastructure.Mappings;
+using BuldringNo.Infrastructure.Repositories;
+using BuldringNo.Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +12,7 @@ using Newtonsoft.Json.Serialization;
 using System.IO;
 using System.Security.Claims;
 
-namespace buldringno
+namespace BuldringNo
 {
     public class Startup
     {

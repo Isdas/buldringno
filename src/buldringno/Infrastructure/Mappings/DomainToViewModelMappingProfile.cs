@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using buldringno.Entities;
-using buldringno.ViewModels;
+using BuldringNo.Entities;
+using BuldringNo.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace buldringno.Infrastructure.Mappings
+namespace BuldringNo.Infrastructure.Mappings
 {
     public class DomainToViewModelMappingProfile : Profile
     {

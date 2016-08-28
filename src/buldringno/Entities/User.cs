@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace buldringno.Entities
+namespace BuldringNo.Entities
 {
     public class User : IEntityBase
     {

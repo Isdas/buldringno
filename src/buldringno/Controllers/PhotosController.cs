@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using buldringno.Entities;
-using buldringno.ViewModels;
+using BuldringNo.Entities;
+using BuldringNo.ViewModels;
 using AutoMapper;
-using buldringno.Infrastructure.Repositories;
-using buldringno.Infrastructure.Core;
+using BuldringNo.Infrastructure.Repositories;
+using BuldringNo.Infrastructure.Core;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace buldringno.Controllers
+namespace BuldringNo.Controllers
 {
     [Route("api/[controller]")]
     public class PhotosController : Controller

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace buldringno.Entities
+namespace BuldringNo.Entities
 {
     public class Photo : IEntityBase
     {

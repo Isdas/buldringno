@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace buldringno.Entities
+namespace BuldringNo.Entities
 {
     public class Album : IEntityBase
     {
         public Album()
         {
-            Photos = new List<Photo>();
+            Photos = new List<Photo>(); 
         }
         public int Id { get; set; }
         public string Title { get; set; }

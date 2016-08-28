@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using buldringno.Entities;
+using BuldringNo.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace buldringno.Infrastructure
+namespace BuldringNo.Infrastructure
 {
     public static class DbInitializer
     {

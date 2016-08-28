@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using buldringno.Entities;
+using BuldringNo.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
-namespace buldringno.Infrastructure
+namespace BuldringNo.Infrastructure
 {
     public class PhotoGalleryContext : DbContext
     {
