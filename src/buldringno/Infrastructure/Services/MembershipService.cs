@@ -9,12 +9,11 @@ namespace BuldringNo.Infrastructure.Services
 {
     public class MembershipService : IMembershipService
     {
-        #region Variables
         private readonly IUserRepository _userRepository;
         private readonly IRoleRepository _roleRepository;
         private readonly IUserRoleRepository _userRoleRepository;
         private readonly IEncryptionService _encryptionService;
-        #endregion
+
         public MembershipService(IUserRepository userRepository, IRoleRepository roleRepository,
         IUserRoleRepository userRoleRepository, IEncryptionService encryptionService)
         {
@@ -23,8 +22,6 @@ namespace BuldringNo.Infrastructure.Services
             _userRoleRepository = userRoleRepository;
             _encryptionService = encryptionService;
         }
-
-        #region IMembershipService Implementation
 
         public MembershipContext ValidateUser(string username, string password)
         {
@@ -44,14 +41,13 @@ namespace BuldringNo.Infrastructure.Services
 
             return membershipCtx;
         }
+
         public User CreateUser(string username, string email, string password, int[] roles)
         {
             var existingUser = _userRepository.GetSingleByUsername(username);
 
             if (existingUser != null)
-            {
                 throw new Exception("Username is already in use");
-            }
 
             var passwordSalt = _encryptionService.CreateSalt();
 
@@ -72,9 +68,7 @@ namespace BuldringNo.Infrastructure.Services
             if (roles != null || roles.Length > 0)
             {
                 foreach (var role in roles)
-                {
                     addUserToRole(user, role);
-                }
             }
 
             _userRepository.Commit();
@@ -96,16 +90,12 @@ namespace BuldringNo.Infrastructure.Services
             if (existingUser != null)
             {
                 foreach (var userRole in existingUser.UserRoles)
-                {
                     _result.Add(userRole.Role);
-                }
             }
 
             return _result.Distinct().ToList();
         }
-        #endregion
 
-        #region Helper methods
         private void addUserToRole(User user, int roleId)
         {
             var role = _roleRepository.GetSingle(roleId);
@@ -117,6 +107,7 @@ namespace BuldringNo.Infrastructure.Services
                 RoleId = role.Id,
                 UserId = user.Id
             };
+
             _userRoleRepository.Add(userRole);
 
             _userRepository.Commit();
@@ -136,6 +127,5 @@ namespace BuldringNo.Infrastructure.Services
 
             return false;
         }
-        #endregion
     }
 }

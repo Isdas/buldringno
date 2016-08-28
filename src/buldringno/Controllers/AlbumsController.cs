@@ -18,8 +18,9 @@ namespace BuldringNo.Controllers
     public class AlbumsController : Controller
     {
         private readonly IAuthorizationService _authorizationService;
-        IAlbumRepository _albumRepository;
-        ILoggingRepository _loggingRepository;
+        private readonly IAlbumRepository _albumRepository;
+        private readonly ILoggingRepository _loggingRepository;
+
         public AlbumsController(IAuthorizationService authorizationService,
                                 IAlbumRepository albumRepository,
                                 ILoggingRepository loggingRepository)
@@ -44,7 +45,6 @@ namespace BuldringNo.Controllers
 
                     List<Album> _albums = null;
                     int _totalAlbums = new int();
-
 
                     _albums = _albumRepository
                         .AllIncluding(a => a.Photos)
@@ -79,7 +79,6 @@ namespace BuldringNo.Controllers
 
             return new ObjectResult(pagedSet);
         }
-
 
         [Authorize(Policy = "AdminOnly")]
         [HttpGet("{id:int}/photos/{page:int=0}/{pageSize=12}")]

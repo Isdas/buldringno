@@ -4,6 +4,7 @@
     {
         private int _status;
         private string _message;
+
         public int Status {
             get
             {
@@ -11,6 +12,7 @@
             }
             private set { }
         }
+
         public string Message
         {
             get

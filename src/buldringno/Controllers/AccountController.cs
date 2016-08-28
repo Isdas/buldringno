@@ -31,7 +31,6 @@ namespace BuldringNo.Controllers
             _loggingRepository = _errorRepository;
         }
 
-
         [HttpPost("authenticate")]
         public async Task<IActionResult> Login([FromBody] LoginViewModel user)
         {
@@ -53,8 +52,7 @@ namespace BuldringNo.Controllers
                     }
                     await HttpContext.Authentication.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
                         new ClaimsPrincipal(new ClaimsIdentity(_claims, CookieAuthenticationDefaults.AuthenticationScheme)),
-                        new Microsoft.AspNetCore.Http.Authentication.AuthenticationProperties {IsPersistent = user.RememberMe });
-
+                        new Microsoft.AspNetCore.Http.Authentication.AuthenticationProperties { IsPersistent = user.RememberMe });
 
                     _authenticationResult = new GenericResult()
                     {
@@ -102,7 +100,6 @@ namespace BuldringNo.Controllers
 
                 return BadRequest();
             }
-
         }
 
         [Route("register")]

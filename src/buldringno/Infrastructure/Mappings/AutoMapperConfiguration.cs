@@ -9,7 +9,6 @@ namespace BuldringNo.Infrastructure.Mappings
             Mapper.Initialize(x =>
             {
                 x.AddProfile<DomainToViewModelMappingProfile>();
-                //x.AddProfile<ViewModelToDomainMappingProfile>();
             });
         }
     }

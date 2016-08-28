@@ -15,8 +15,9 @@ namespace BuldringNo.Controllers
     [Route("api/[controller]")]
     public class PhotosController : Controller
     {
-        IPhotoRepository _photoRepository;
-        ILoggingRepository _loggingRepository;
+        private readonly IPhotoRepository _photoRepository;
+        private readonly ILoggingRepository _loggingRepository;
+
         public PhotosController(IPhotoRepository photoRepository, ILoggingRepository loggingRepository)
         {
             _photoRepository = photoRepository;
@@ -35,7 +36,6 @@ namespace BuldringNo.Controllers
 
                 List<Photo> _photos = null;
                 int _totalPhotos = new int();
-
 
                 _photos = _photoRepository
                     .AllIncluding(p => p.Album)
@@ -74,8 +74,8 @@ namespace BuldringNo.Controllers
             try
             {
                 Photo _photoToRemove = this._photoRepository.GetSingle(id);
-                this._photoRepository.Delete(_photoToRemove);
-                this._photoRepository.Commit();
+                _photoRepository.Delete(_photoToRemove);
+                _photoRepository.Commit();
 
                 _removeResult = new GenericResult()
                 {

@@ -21,9 +21,7 @@ namespace BuldringNo.Infrastructure
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var entity in modelBuilder.Model.GetEntityTypes())
-            {
                 entity.Relational().TableName = entity.DisplayName();
-            }
 
             // Photos
             modelBuilder.Entity<Photo>().Property(p => p.Title).HasMaxLength(100);

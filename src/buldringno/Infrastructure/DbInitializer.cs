@@ -15,7 +15,6 @@ namespace BuldringNo.Infrastructure
 
             InitializePhotoAlbums(imagesPath);
             InitializeUserRoles();
-
         }
 
         private static void InitializePhotoAlbums(string imagesPath)
@@ -82,7 +81,6 @@ namespace BuldringNo.Infrastructure
         {
             if (!context.Roles.Any())
             {
-                // create roles
                 context.Roles.AddRange(new Role[]
                 {
                 new Role()
@@ -106,11 +104,10 @@ namespace BuldringNo.Infrastructure
                     DateCreated = DateTime.Now
                 });
 
-                // create user-admin for chsakell
                 context.UserRoles.AddRange(new UserRole[] {
                 new UserRole() {
-                    RoleId = 1, // admin
-                    UserId = 1  // chsakell
+                    RoleId = 1,
+                    UserId = 1
                 }
             });
                 context.SaveChanges();
