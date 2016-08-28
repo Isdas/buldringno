@@ -1,26 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using buldringno.Infrastructure;
+using buldringno.Infrastructure.Mappings;
+using buldringno.Infrastructure.Repositories;
+using buldringno.Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.PlatformAbstractions;
-using Microsoft.Extensions.Configuration;
-using PhotoGallery.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using PhotoGallery.Infrastructure.Repositories;
-using PhotoGallery.Infrastructure.Services;
-using PhotoGallery.Infrastructure.Mappings;
-using PhotoGallery.Infrastructure.Core;
-using System.Security.Claims;
-using Microsoft.AspNetCore.StaticFiles;
-using System.IO;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Newtonsoft.Json.Serialization;
+using System.IO;
+using System.Security.Claims;
 
-namespace PhotoGallery
+namespace buldringno
 {
     public class Startup
     {

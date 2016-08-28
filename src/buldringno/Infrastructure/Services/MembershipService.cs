@@ -1,12 +1,12 @@
-﻿using PhotoGallery.Entities;
-using PhotoGallery.Infrastructure.Repositories;
+﻿using buldringno.Entities;
+using buldringno.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
 using System.Threading.Tasks;
 
-namespace PhotoGallery.Infrastructure.Services
+namespace buldringno.Infrastructure.Services
 {
     public class MembershipService : IMembershipService
     {

@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using PhotoGallery.Entities;
-using PhotoGallery.ViewModels;
+using buldringno.Entities;
+using buldringno.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace PhotoGallery.Infrastructure.Mappings
+namespace buldringno.Infrastructure.Mappings
 {
     public class DomainToViewModelMappingProfile : Profile
     {

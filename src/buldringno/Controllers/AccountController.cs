@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using PhotoGallery.Infrastructure.Services;
-using PhotoGallery.Infrastructure.Repositories;
-using PhotoGallery.Entities;
-using PhotoGallery.ViewModels;
-using PhotoGallery.Infrastructure.Core;
-using PhotoGallery.Infrastructure;
+using buldringno.Infrastructure.Services;
+using buldringno.Infrastructure.Repositories;
+using buldringno.Entities;
+using buldringno.ViewModels;
+using buldringno.Infrastructure.Core;
+using buldringno.Infrastructure;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace PhotoGallery.Controllers
+namespace buldringno.Controllers
 {
     [Route("api/[controller]")]
     public class AccountController : Controller

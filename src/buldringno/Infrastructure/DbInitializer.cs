@@ -1,12 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PhotoGallery.Entities;
+using buldringno.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace PhotoGallery.Infrastructure
+namespace buldringno.Infrastructure
 {
     public static class DbInitializer
     {
