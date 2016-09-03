@@ -9,10 +9,7 @@ namespace BuldringNo.Infrastructure.Core
 
         public int Count
         {
-            get
-            {
-                return (null != this.Items) ? this.Items.Count() : 0;
-            }
+            get { return (null != this.Items) ? this.Items.Count() : 0; }
         }
 
         public int TotalPages { get; set; }

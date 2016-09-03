@@ -1,6 +1,5 @@
 ﻿using BuldringNo.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace BuldringNo.Infrastructure
@@ -14,9 +13,9 @@ namespace BuldringNo.Infrastructure
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<Error> Errors { get; set; }
 
-        public BuldringNoContext(DbContextOptions options) : base(options)
-        {
-        }
+        public BuldringNoContext(DbContextOptions options)
+            : base(options)
+        { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

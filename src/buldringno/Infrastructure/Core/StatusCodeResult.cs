@@ -6,19 +6,13 @@
         private string _message;
 
         public int Status {
-            get
-            {
-                return _status;
-            }
+            get { return _status; }
             private set { }
         }
 
         public string Message
         {
-            get
-            {
-                return _message;
-            }
+            get { return _message; }
             private set { }
         }
 

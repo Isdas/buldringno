@@ -23,8 +23,8 @@ namespace BuldringNo
         {
             _applicationPath = env.WebRootPath;
             _contentRootPath = env.ContentRootPath;
+            
             // Setup configuration sources.
-
             var builder = new ConfigurationBuilder()
                 .SetBasePath(_contentRootPath)
                 .AddJsonFile("appsettings.json")
