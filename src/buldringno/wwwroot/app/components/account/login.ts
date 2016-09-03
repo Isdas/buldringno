@@ -8,7 +8,7 @@ import { MembershipService } from '../../core/services/membershipService';
 import { NotificationService } from '../../core/services/notificationService';
 
 @Component({
-    selector: 'albums',
+    selector: 'boulders',
     providers: [MembershipService, NotificationService],
     templateUrl: './app/components/account/login.html',
     directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, RouterLink]

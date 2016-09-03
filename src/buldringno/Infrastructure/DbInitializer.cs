@@ -1,4 +1,5 @@
 ﻿using BuldringNo.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,62 +14,62 @@ namespace BuldringNo.Infrastructure
         {
             context = (BuldringNoContext)serviceProvider.GetService(typeof(BuldringNoContext));
 
-            InitializePhotoAlbums(imagesPath);
             InitializeUserRoles();
+            InitializeProblemBoulders(imagesPath);
         }
 
-        private static void InitializePhotoAlbums(string imagesPath)
+        private static void InitializeProblemBoulders(string imagesPath)
         {
-            if (!context.Albums.Any())
+            if (!context.Boulders.Any())
             {
-                List<Album> _albums = new List<Album>();
+                List<Boulder> _boulders = new List<Boulder>();
 
-                var _album1 = context.Albums.Add(
-                    new Album
+                var _boulder1 = context.Boulders.Add(
+                    new Boulder
                     {
                         DateCreated = DateTime.Now,
-                        Title = "Album 1",
+                        Title = "Boulder 1",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     }).Entity;
-                var _album2 = context.Albums.Add(
-                    new Album
+                var _boulder2 = context.Boulders.Add(
+                    new Boulder
                     {
                         DateCreated = DateTime.Now,
-                        Title = "Album 2",
+                        Title = "Boulder 2",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     }).Entity;
-                var _album3 = context.Albums.Add(
-                    new Album
+                var _boulder3 = context.Boulders.Add(
+                    new Boulder
                     {
                         DateCreated = DateTime.Now,
-                        Title = "Album 3",
+                        Title = "Boulder 3",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     }).Entity;
-                var _album4 = context.Albums.Add(
-                    new Album
+                var _boulder4 = context.Boulders.Add(
+                    new Boulder
                     {
                         DateCreated = DateTime.Now,
-                        Title = "Album 4",
+                        Title = "Boulder 4",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     }).Entity;
 
-                _albums.Add(_album1); _albums.Add(_album2); _albums.Add(_album3); _albums.Add(_album4);
+                _boulders.Add(_boulder1); _boulders.Add(_boulder2); _boulders.Add(_boulder3); _boulders.Add(_boulder4);
 
                 string[] _images = Directory.GetFiles(Path.Combine(imagesPath, "images"));
                 Random rnd = new Random();
 
                 foreach (string _image in _images)
                 {
-                    int _selectedAlbum = rnd.Next(1, 4);
+                    int _selectedBoulder = rnd.Next(1, 4);
                     string _fileName = Path.GetFileName(_image);
 
-                    context.Photos.Add(
-                        new Photo()
+                    context.Problems.Add(
+                        new Problem()
                         {
                             Title = _fileName,
                             DateUploaded = DateTime.Now,
                             Uri = _fileName,
-                            Album = _albums.ElementAt(_selectedAlbum)
+                            Boulder = _boulders.ElementAt(_selectedBoulder)
                         }
                         );
                 }

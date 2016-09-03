@@ -7,8 +7,8 @@ namespace BuldringNo.Infrastructure
 {
     public class BuldringNoContext : DbContext
     {
-        public DbSet<Photo> Photos { get; set; }
-        public DbSet<Album> Albums { get; set; }
+        public DbSet<Problem> Problems { get; set; }
+        public DbSet<Boulder> Boulders { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
@@ -18,19 +18,24 @@ namespace BuldringNo.Infrastructure
         {
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MSSQLLocalDB;Trusted_Connection=True;");
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach (var entity in modelBuilder.Model.GetEntityTypes())
-                entity.Relational().TableName = entity.DisplayName();
+                entity.Relational().TableName = entity.ClrType.Name;
 
-            // Photos
-            modelBuilder.Entity<Photo>().Property(p => p.Title).HasMaxLength(100);
-            modelBuilder.Entity<Photo>().Property(p => p.AlbumId).IsRequired();
+            // Problems
+            modelBuilder.Entity<Problem>().Property(p => p.Title).HasMaxLength(100);
+            modelBuilder.Entity<Problem>().Property(p => p.BoulderId).IsRequired();
 
-            // Album
-            modelBuilder.Entity<Album>().Property(a => a.Title).HasMaxLength(100);
-            modelBuilder.Entity<Album>().Property(a => a.Description).HasMaxLength(500);
-            modelBuilder.Entity<Album>().HasMany(a => a.Photos).WithOne(p => p.Album);
+            // Boulder
+            modelBuilder.Entity<Boulder>().Property(a => a.Title).HasMaxLength(100);
+            modelBuilder.Entity<Boulder>().Property(a => a.Description).HasMaxLength(500);
+            modelBuilder.Entity<Boulder>().HasMany(a => a.Problems).WithOne(p => p.Boulder);
 
             // User
             modelBuilder.Entity<User>().Property(u => u.Username).IsRequired().HasMaxLength(100);

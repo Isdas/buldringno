@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace BuldringNo.Infrastructure.Repositories
 {
-    public interface IAlbumRepository : IEntityBaseRepository<Album> { }
+    public interface IBoulderRepository : IEntityBaseRepository<Boulder> { }
 
     public interface ILoggingRepository : IEntityBaseRepository<Error> { }
 
-    public interface IPhotoRepository : IEntityBaseRepository<Photo> { }
+    public interface IProblemRepository : IEntityBaseRepository<Problem> { }
 
     public interface IRoleRepository : IEntityBaseRepository<Role> { }
 

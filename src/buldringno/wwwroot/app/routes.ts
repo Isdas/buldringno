@@ -1,15 +1,15 @@
 ﻿import { Route, Router } from '@angular/router-deprecated';
 import { Home } from './components/home';
-import { Photos } from './components/photos';
-import { Albums } from './components/albums';
-import { AlbumPhotos } from './components/albumPhotos';
+import { Problems } from './components/problems';
+import { Boulders } from './components/boulders';
+import { BoulderProblem } from './components/boulderProblems';
 import { Account } from './components/account/account';
 
 export var Routes = {
     home: new Route({ path: '/', name: 'Home', component: Home }),
-    photos: new Route({ path: '/photos', name: 'Photos', component: Photos }),
-    albums: new Route({ path: '/albums', name: 'Albums', component: Albums }),
-    albumPhotos: new Route({ path: '/albums/:id/photos', name: 'AlbumPhotos', component: AlbumPhotos }),
+    problems: new Route({ path: '/problems', name: 'Problems', component: Problems }),
+    boulders: new Route({ path: '/boulders', name: 'Boulders', component: Boulders }),
+    boulderProblems: new Route({ path: '/boulders/:id/problems', name: 'BoulderProblems', component: BoulderProblem }),
     account: new Route({ path: '/account/...', name: 'Account', component: Account })
 };
 

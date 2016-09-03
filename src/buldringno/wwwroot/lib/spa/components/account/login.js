@@ -48,7 +48,7 @@ var Login = (function () {
     ;
     Login = __decorate([
         core_1.Component({
-            selector: 'albums',
+            selector: 'boulders',
             providers: [membershipService_1.MembershipService, notificationService_1.NotificationService],
             templateUrl: './app/components/account/login.html',
             directives: [common_1.CORE_DIRECTIVES, common_1.FORM_DIRECTIVES, router_deprecated_1.RouterLink]

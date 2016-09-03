@@ -18,6 +18,7 @@ namespace BuldringNo
     {
         private static string _applicationPath = string.Empty;
         private static string _contentRootPath = string.Empty;
+
         public Startup(IHostingEnvironment env)
         {
             _applicationPath = env.WebRootPath;
@@ -47,10 +48,9 @@ namespace BuldringNo
             services.AddDbContext<BuldringNoContext>(options =>
                 options.UseSqlServer(Configuration["Data:PhotoGalleryConnection:ConnectionString"]));
 
-
             // Repositories
-            services.AddScoped<IPhotoRepository, PhotoRepository>();
-            services.AddScoped<IAlbumRepository, AlbumRepository>();
+            services.AddScoped<IProblemRepository, ProblemRepository>();
+            services.AddScoped<IBoulderRepository, BoulderRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserRoleRepository, UserRoleRepository>();
             services.AddScoped<IRoleRepository, RoleRepository>();

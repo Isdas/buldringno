@@ -9,14 +9,14 @@ namespace BuldringNo.Infrastructure.Mappings
     {
         protected override void Configure()
         {
-            Mapper.CreateMap<Photo, PhotoViewModel>()
+            Mapper.CreateMap<Problem, ProblemViewModel>()
                .ForMember(vm => vm.Uri, map => map.MapFrom(p => "/images/" + p.Uri));
 
-            Mapper.CreateMap<Album, AlbumViewModel>()
-                .ForMember(vm => vm.TotalPhotos, map => map.MapFrom(a => a.Photos.Count))
+            Mapper.CreateMap<Boulder, BoulderViewModel>()
+                .ForMember(vm => vm.TotalProblems, map => map.MapFrom(a => a.Problems.Count))
                 .ForMember(vm => vm.Thumbnail, map => 
-                    map.MapFrom(a => (a.Photos != null && a.Photos.Count > 0) ?
-                    "/images/" + a.Photos.First().Uri :
+                    map.MapFrom(a => (a.Problems != null && a.Problems.Count > 0) ?
+                    "/images/" + a.Problems.First().Uri :
                     "/images/thumbnail-default.png"));
         }
     }
