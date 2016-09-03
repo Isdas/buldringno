@@ -10,7 +10,7 @@ exports.Routes = {
     home: new router_deprecated_1.Route({ path: '/', name: 'Home', component: home_1.Home }),
     problems: new router_deprecated_1.Route({ path: '/problems', name: 'Problems', component: problems_1.Problems }),
     boulders: new router_deprecated_1.Route({ path: '/boulders', name: 'Boulders', component: boulders_1.Boulders }),
-    boulderProblems: new router_deprecated_1.Route({ path: '/boulders/:id/problems', name: 'BoulderProblems', component: boulderProblems_1.BoulderProblem }),
+    boulderProblems: new router_deprecated_1.Route({ path: '/boulders/:id/problems', name: 'BoulderProblems', component: boulderProblems_1.BoulderProblems }),
     account: new router_deprecated_1.Route({ path: '/account/...', name: 'Account', component: account_1.Account }),
     users: new router_deprecated_1.Route({ path: '/users', name: 'Users', component: users_1.Users }),
 };

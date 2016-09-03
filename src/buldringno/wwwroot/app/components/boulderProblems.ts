@@ -11,10 +11,10 @@ import { OperationResult } from '../core/domain/operationResult';
 @Component({
     selector: 'boulder-problem',
     providers: [NotificationService],
-    templateUrl: './app/components/boulderProblem.html',
+    templateUrl: './app/components/boulderProblems.html',
     directives: [RouterLink]
 })
-export class BoulderProblem extends Paginated implements OnInit {
+export class BoulderProblems extends Paginated implements OnInit {
     private _bouldersAPI: string = 'api/boulders/';
     private _problemsAPI: string = 'api/problems/';
     private _boulderId: string;

@@ -20,9 +20,9 @@ var dataService_1 = require('../core/services/dataService');
 var utilityService_1 = require('../core/services/utilityService');
 var notificationService_1 = require('../core/services/notificationService');
 var operationResult_1 = require('../core/domain/operationResult');
-var BoulderProblem = (function (_super) {
-    __extends(BoulderProblem, _super);
-    function BoulderProblem(dataService, utilityService, notificationService, routeParam) {
+var BoulderProblems = (function (_super) {
+    __extends(BoulderProblems, _super);
+    function BoulderProblems(dataService, utilityService, notificationService, routeParam) {
         _super.call(this, 0, 0, 0);
         this.dataService = dataService;
         this.utilityService = utilityService;
@@ -31,13 +31,13 @@ var BoulderProblem = (function (_super) {
         this._bouldersAPI = 'api/boulders/';
         this._problemsAPI = 'api/problems/';
     }
-    BoulderProblem.prototype.ngOnInit = function () {
+    BoulderProblems.prototype.ngOnInit = function () {
         this._boulderId = this.routeParam.get('id');
         this._bouldersAPI += this._boulderId + '/problems/';
         this.dataService.set(this._bouldersAPI, 12);
         this.getBoulderProblems();
     };
-    BoulderProblem.prototype.getBoulderProblems = function () {
+    BoulderProblems.prototype.getBoulderProblems = function () {
         var _this = this;
         this.dataService.get(this._page)
             .subscribe(function (res) {
@@ -55,15 +55,15 @@ var BoulderProblem = (function (_super) {
             console.error('Error: ' + error);
         }, function () { return console.log(_this._problems); });
     };
-    BoulderProblem.prototype.search = function (i) {
+    BoulderProblems.prototype.search = function (i) {
         _super.prototype.search.call(this, i);
         this.getBoulderProblems();
     };
     ;
-    BoulderProblem.prototype.convertDateTime = function (date) {
+    BoulderProblems.prototype.convertDateTime = function (date) {
         return this.utilityService.convertDateTime(date);
     };
-    BoulderProblem.prototype.delete = function (problem) {
+    BoulderProblems.prototype.delete = function (problem) {
         var _this = this;
         var _removeResult = new operationResult_1.OperationResult(false, '');
         this.notificationService.printConfirmationDialog('Are you sure you want to delete the problem?', function () {
@@ -82,15 +82,15 @@ var BoulderProblem = (function (_super) {
             });
         });
     };
-    BoulderProblem = __decorate([
+    BoulderProblems = __decorate([
         core_1.Component({
             selector: 'boulder-problem',
             providers: [notificationService_1.NotificationService],
-            templateUrl: './app/components/boulderProblem.html',
+            templateUrl: './app/components/boulderProblems.html',
             directives: [router_deprecated_1.RouterLink]
         }), 
         __metadata('design:paramtypes', [dataService_1.DataService, utilityService_1.UtilityService, notificationService_1.NotificationService, router_deprecated_1.RouteParams])
-    ], BoulderProblem);
-    return BoulderProblem;
+    ], BoulderProblems);
+    return BoulderProblems;
 }(paginated_1.Paginated));
-exports.BoulderProblem = BoulderProblem;
+exports.BoulderProblems = BoulderProblems;
