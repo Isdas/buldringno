@@ -92,17 +92,6 @@ namespace BuldringNo.Infrastructure
 
                 context.SaveChanges();
             }
-
-            if (!context.Users.Any())
-            {
-                context.UserRoles.AddRange(new UserRole[] {
-                new UserRole() {
-                    RoleId = 1,
-                    UserId = 1
-                }
-            });
-                context.SaveChanges();
-            }
         }
     }
 }
