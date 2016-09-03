@@ -95,16 +95,6 @@ namespace BuldringNo.Infrastructure
 
             if (!context.Users.Any())
             {
-                context.Users.Add(new User()
-                {
-                    Email = "chsakells.blog@gmail.com",
-                    Username = "chsakell",
-                    HashedPassword = "9wsmLgYM5Gu4zA/BSpxK2GIBEWzqMPKs8wl2WDBzH/4=",
-                    Salt = "GTtKxJA6xJuj3ifJtTXn9Q==",
-                    IsLocked = false,
-                    DateCreated = DateTime.Now
-                });
-
                 context.UserRoles.AddRange(new UserRole[] {
                 new UserRole() {
                     RoleId = 1,
