@@ -86,6 +86,10 @@ namespace BuldringNo.Infrastructure
                 {
                 new Role()
                 {
+                    Name="Developer"
+                },
+                new Role()
+                {
                     Name="Admin"
                 }
                 });
