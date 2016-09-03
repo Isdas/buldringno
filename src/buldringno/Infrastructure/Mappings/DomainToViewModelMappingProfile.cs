@@ -18,6 +18,8 @@ namespace BuldringNo.Infrastructure.Mappings
                     map.MapFrom(a => (a.Problems != null && a.Problems.Count > 0) ?
                     "/images/" + a.Problems.First().Uri :
                     "/images/thumbnail-default.png"));
+
+            Mapper.CreateMap<User, UserViewModel>();
         }
     }
 }

@@ -12,10 +12,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a [routerLink]="[routes.problems.name]"><i class="fa fa-camera fa-fw"></i>&nbsp;Problemer</a>
-                </li>
-                <li>
+                <li><a [routerLink]="[routes.problems.name]"><i class="fa fa-camera fa-fw"></i>&nbsp;Problemer</a></li>
                 <li><a [routerLink]="[routes.boulders.name]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Bulder</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i>&nbsp;{{getUserName()}}<b class="caret"></b></a>
@@ -24,7 +21,10 @@
                             <a [routerLink]="['/Account/Login']"><i class="fa fa-unlock-alt fa-fw"></i>&nbsp;Logg inn</a>
                         </li>
                         <li *ngIf="isUserLoggedIn()">
-                            <a  [routerLink]="[routes.home.name]" (click)="logout()"><i class="fa fa-power-off fa-fw"></i>&nbsp;Logg ut</a>
+                            <a [routerLink]="[routes.home.name]" (click)="logout()"><i class="fa fa-power-off fa-fw"></i>&nbsp;Logg ut</a>
+                        </li>
+                        <li *ngIf="isUserLoggedIn()">
+                            <a [routerLink]="[routes.users.name]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Brukere</a>
                         </li>
                     </ul>
                 </li>
