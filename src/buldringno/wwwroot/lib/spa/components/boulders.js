@@ -46,12 +46,7 @@ var Boulders = (function (_super) {
             _this._page = data.Page;
             _this._pagesCount = data.TotalPages;
             _this._totalCount = data.TotalCount;
-        }, function (error) {
-            if (error.status == 401 || error.status == 404) {
-                _this.notificationService.printErrorMessage('Authentication required');
-                _this.utilityService.navigateToSignIn();
-            }
-        });
+        }, function (error) { return console.error('Error: ' + error); });
     };
     Boulders.prototype.search = function (i) {
         _super.prototype.search.call(this, i);

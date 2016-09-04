@@ -41,13 +41,7 @@ export class Boulders extends Paginated implements OnInit {
                 this._pagesCount = data.TotalPages;
                 this._totalCount = data.TotalCount;
             },
-            error => {
-
-                if (error.status == 401 || error.status == 404) {
-                    this.notificationService.printErrorMessage('Authentication required');
-                    this.utilityService.navigateToSignIn();
-                }
-            });
+            error => console.error('Error: ' + error));
     }
 
     search(i): void {

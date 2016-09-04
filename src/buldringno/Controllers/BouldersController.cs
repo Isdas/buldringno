@@ -30,7 +30,6 @@ namespace BuldringNo.Controllers
             _loggingRepository = loggingRepository;
         }
 
-        [Authorize(Policy = "AdminOnly")]
         [HttpGet("{page:int=0}/{pageSize=12}")]
         public async Task<IActionResult> Get(int? page, int? pageSize)
         {
@@ -80,7 +79,6 @@ namespace BuldringNo.Controllers
             return new ObjectResult(pagedSet);
         }
 
-        [Authorize(Policy = "AdminOnly")]
         [HttpGet("{id:int}/problems/{page:int=0}/{pageSize=12}")]
         public PaginationSet<ProblemViewModel> Get(int id, int? page, int? pageSize)
         {
