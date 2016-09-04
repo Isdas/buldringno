@@ -48,6 +48,7 @@ var BoulderProblems = (function (_super) {
             _this._pagesCount = data.TotalPages;
             _this._totalCount = data.TotalCount;
             _this._boulderTitle = _this._problems[0].BoulderTitle;
+            _this._grade = _this._problems[0].Grade;
         }, function (error) {
             if (error.status == 401 || error.status == 302) {
                 _this.utilityService.navigateToSignIn();

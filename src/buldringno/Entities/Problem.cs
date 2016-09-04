@@ -9,6 +9,7 @@ namespace BuldringNo.Entities
         public string Uri { get; set; }
         public virtual Boulder Boulder { get; set; }
         public int BoulderId { get; set; }
+        public string Grade { get; set; }
         public DateTime DateUploaded { get; set; }
     }
 }

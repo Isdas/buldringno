@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace BuldringNo.Migrations
+namespace buldringno.Migrations
 {
     public partial class initial : Migration
     {
@@ -78,6 +78,7 @@ namespace BuldringNo.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     BoulderId = table.Column<int>(nullable: false),
                     DateUploaded = table.Column<DateTime>(nullable: false),
+                    Grade = table.Column<string>(maxLength: 3, nullable: true),
                     Title = table.Column<string>(maxLength: 100, nullable: true),
                     Uri = table.Column<string>(nullable: true)
                 },

@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using BuldringNo.Infrastructure;
 
-namespace BuldringNo.Migrations
+namespace buldringno.Migrations
 {
     [DbContext(typeof(BuldringNoContext))]
-    [Migration("20160903121746_initial")]
+    [Migration("20160904165321_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,6 +59,9 @@ namespace BuldringNo.Migrations
                     b.Property<int>("BoulderId");
 
                     b.Property<DateTime>("DateUploaded");
+
+                    b.Property<string>("Grade")
+                        .HasAnnotation("MaxLength", 3);
 
                     b.Property<string>("Title")
                         .HasAnnotation("MaxLength", 100);

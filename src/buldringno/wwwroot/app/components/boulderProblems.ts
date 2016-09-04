@@ -21,6 +21,7 @@ export class BoulderProblems extends Paginated implements OnInit {
     private _problems: Array<Problem>;
     private _displayingTotal: number;
     private _boulderTitle: string;
+    private _grade: string;
 
     constructor(public dataService: DataService,
                 public utilityService: UtilityService,
@@ -48,6 +49,7 @@ export class BoulderProblems extends Paginated implements OnInit {
                 this._pagesCount = data.TotalPages;
                 this._totalCount = data.TotalCount;
                 this._boulderTitle = this._problems[0].BoulderTitle;
+                this._grade = this._problems[0].Grade;
             },
             error => {
 

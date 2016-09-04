@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using BuldringNo.Infrastructure;
 
-namespace BuldringNo.Migrations
+namespace buldringno.Migrations
 {
     [DbContext(typeof(BuldringNoContext))]
     partial class BuldringNoContextModelSnapshot : ModelSnapshot
@@ -58,6 +58,9 @@ namespace BuldringNo.Migrations
                     b.Property<int>("BoulderId");
 
                     b.Property<DateTime>("DateUploaded");
+
+                    b.Property<string>("Grade")
+                        .HasAnnotation("MaxLength", 3);
 
                     b.Property<string>("Title")
                         .HasAnnotation("MaxLength", 100);

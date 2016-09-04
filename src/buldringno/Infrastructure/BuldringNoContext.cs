@@ -25,6 +25,7 @@ namespace BuldringNo.Infrastructure
             // Problems
             modelBuilder.Entity<Problem>().Property(p => p.Title).HasMaxLength(100);
             modelBuilder.Entity<Problem>().Property(p => p.BoulderId).IsRequired();
+            modelBuilder.Entity<Problem>().Property(p => p.Grade).HasMaxLength(3);
 
             // Boulder
             modelBuilder.Entity<Boulder>().Property(a => a.Title).HasMaxLength(100);

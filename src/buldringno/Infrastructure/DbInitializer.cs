@@ -69,7 +69,8 @@ namespace BuldringNo.Infrastructure
                             Title = _fileName,
                             DateUploaded = DateTime.Now,
                             Uri = _fileName,
-                            Boulder = _boulders.ElementAt(_selectedBoulder)
+                            Boulder = _boulders.ElementAt(_selectedBoulder),
+                            Grade = "7A"
                         }
                         );
                 }
