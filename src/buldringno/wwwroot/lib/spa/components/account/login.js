@@ -24,7 +24,7 @@ var Login = (function () {
         this.routes = routes_1.Routes;
     }
     Login.prototype.ngOnInit = function () {
-        this._user = new user_1.User('', '');
+        this._user = new user_1.User('', '', '');
         this.routes = routes_1.Routes;
     };
     Login.prototype.login = function () {

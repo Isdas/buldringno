@@ -22,7 +22,7 @@ export class Login implements OnInit {
                 public router: Router) { }
 
     ngOnInit() {
-        this._user = new User('', '');
+        this._user = new User('', '', '');
         this.routes = Routes;
     }
 

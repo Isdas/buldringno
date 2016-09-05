@@ -41,7 +41,7 @@ var MembershipService = (function () {
         var _user;
         if (this.isUserAuthenticated()) {
             var _userData = JSON.parse(localStorage.getItem('user'));
-            _user = new user_1.User(_userData.Username, _userData.Password);
+            _user = new user_1.User(_userData.Username, _userData.Password, _userData.Email);
         }
         return _user;
     };

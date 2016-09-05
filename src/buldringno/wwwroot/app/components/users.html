@@ -14,9 +14,20 @@
         </div>
     </div>
     <!-- /.row -->
-    <ol class="row album-box" *ngFor="#user of _users">
-        <bold>{{user.Username}}</bold>
-    </ol>
+    <table st-table="rowCollection" class="table table-striped">
+        <thead>
+            <tr>
+                <td>Brukernavn</td>
+                <td>Epost</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="#user of _users">
+                <td>{{user.Username}}</td>
+                <td>{{user.Email}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <footer class="navbar navbar-fixed-bottom">
