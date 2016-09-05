@@ -19,7 +19,7 @@
         public CodeResultStatus(int status)
         {
             if (status == 401)
-                _message = "Unauthorized access. Login required";
+                _message = "Uautorisert tilgang. Innlogging kreves";
 
             _status = status;
         }

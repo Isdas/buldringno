@@ -80,7 +80,7 @@ namespace BuldringNo.Controllers
                 _removeResult = new GenericResult()
                 {
                     Succeeded = true,
-                    Message = "Problem removed."
+                    Message = "Problem fjernet."
                 };
             }
             catch (Exception ex)

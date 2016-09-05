@@ -39,7 +39,7 @@ export class AppRoot implements OnInit {
             return _user.Username;
         }
         else
-            return 'Account';
+            return 'Konto';
     }
 
     logout(): void {

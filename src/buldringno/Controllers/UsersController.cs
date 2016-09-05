@@ -96,7 +96,7 @@ namespace BuldringNo.Controllers
                 _removeResult = new GenericResult()
                 {
                     Succeeded = true,
-                    Message = "User removed."
+                    Message = "Bruker fjernet."
                 };
             }
             catch (Exception ex)

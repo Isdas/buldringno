@@ -36,7 +36,7 @@ var Login = (function () {
             _authenticationResult.Message = res.Message;
         }, function (error) { return console.error('Error: ' + error); }, function () {
             if (_authenticationResult.Succeeded) {
-                _this.notificationService.printSuccessMessage('Welcome back ' + _this._user.Username + '!');
+                _this.notificationService.printSuccessMessage('Velkommen tilbake ' + _this._user.Username + '!');
                 localStorage.setItem('user', JSON.stringify(_this._user));
                 _this.router.navigate([_this.routes.home.name]);
             }

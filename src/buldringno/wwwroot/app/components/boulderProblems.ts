@@ -74,7 +74,7 @@ export class BoulderProblems extends Paginated implements OnInit {
     delete(problem: Problem) {
         var _removeResult: OperationResult = new OperationResult(false, '');
 
-        this.notificationService.printConfirmationDialog('Are you sure you want to delete the problem?',
+        this.notificationService.printConfirmationDialog('Er du sikker på at du vil slette problemet?',
             () => {
                 this.dataService.deleteResource(this._bouldersAPI + problem.Id)
                     .subscribe(res => {
@@ -84,11 +84,11 @@ export class BoulderProblems extends Paginated implements OnInit {
                     error => console.error('Error: ' + error),
                     () => {
                         if (_removeResult.Succeeded) {
-                            this.notificationService.printSuccessMessage(problem.Title + ' removed from gallery.');
+                            this.notificationService.printSuccessMessage(problem.Title + ' fjernet fra bulder.');
                             this.getBoulderProblems();
                         }
                         else {
-                            this.notificationService.printErrorMessage('Failed to remove problem');
+                            this.notificationService.printErrorMessage('Kunne ikke fjerne problemet');
                         }
                     });
             });

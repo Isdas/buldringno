@@ -28,28 +28,28 @@ namespace BuldringNo.Infrastructure
                     new Boulder
                     {
                         DateCreated = DateTime.Now,
-                        Title = "Boulder 1",
+                        Title = "Bulder 1",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     }).Entity;
                 var _boulder2 = context.Boulders.Add(
                     new Boulder
                     {
                         DateCreated = DateTime.Now,
-                        Title = "Boulder 2",
+                        Title = "Bulder 2",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     }).Entity;
                 var _boulder3 = context.Boulders.Add(
                     new Boulder
                     {
                         DateCreated = DateTime.Now,
-                        Title = "Boulder 3",
+                        Title = "Bulder 3",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     }).Entity;
                 var _boulder4 = context.Boulders.Add(
                     new Boulder
                     {
                         DateCreated = DateTime.Now,
-                        Title = "Boulder 4",
+                        Title = "Bulder 4",
                         Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     }).Entity;
 

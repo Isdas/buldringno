@@ -35,7 +35,7 @@ var Register = (function () {
             _registrationResult.Message = res.Message;
         }, function (error) { return console.error('Error: ' + error); }, function () {
             if (_registrationResult.Succeeded) {
-                _this.notificationService.printSuccessMessage('Dear ' + _this._newUser.Username + ', please login with your credentials');
+                _this.notificationService.printSuccessMessage('Kjære ' + _this._newUser.Username + ', logg deg inn med legitimasjon');
                 _this.router.navigate([_this.routes.login.name]);
             }
             else {

@@ -44,7 +44,7 @@ export class Users extends Paginated implements OnInit {
             error => {
 
                 if (error.status == 401 || error.status == 404) {
-                    this.notificationService.printErrorMessage('Authentication required');
+                    this.notificationService.printErrorMessage('Autentisering kreves');
                     this.utilityService.navigateToSignIn();
                 }
             });

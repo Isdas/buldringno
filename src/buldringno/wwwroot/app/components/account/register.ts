@@ -38,7 +38,7 @@ export class Register implements OnInit {
             error => console.error('Error: ' + error),
             () => {
                 if (_registrationResult.Succeeded) {
-                    this.notificationService.printSuccessMessage('Dear ' + this._newUser.Username + ', please login with your credentials');
+                    this.notificationService.printSuccessMessage('Kjære ' + this._newUser.Username + ', logg deg inn med legitimasjon');
                     this.router.navigate([this.routes.login.name]);
                 }
                 else {

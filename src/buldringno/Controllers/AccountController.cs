@@ -57,7 +57,7 @@ namespace BuldringNo.Controllers
                     _authenticationResult = new GenericResult()
                     {
                         Succeeded = true,
-                        Message = "Authentication succeeded"
+                        Message = "Autentisering lyktes"
                     };
                 }
                 else
@@ -65,7 +65,7 @@ namespace BuldringNo.Controllers
                     _authenticationResult = new GenericResult()
                     {
                         Succeeded = false,
-                        Message = "Authentication failed"
+                        Message = "Autentisering mislyktes"
                     };
                 }
             }
@@ -120,7 +120,7 @@ namespace BuldringNo.Controllers
                         _registrationResult = new GenericResult()
                         {
                             Succeeded = true,
-                            Message = "Registration succeeded"
+                            Message = "Registrering lyktes"
                         };
                     }
                 }
@@ -129,7 +129,7 @@ namespace BuldringNo.Controllers
                     _registrationResult = new GenericResult()
                     {
                         Succeeded = false,
-                        Message = "Invalid fields."
+                        Message = "Ugyldige felt."
                     };
                 }
             }

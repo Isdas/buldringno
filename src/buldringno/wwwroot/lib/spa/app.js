@@ -37,7 +37,7 @@ var AppRoot = (function () {
             return _user.Username;
         }
         else
-            return 'Account';
+            return 'Konto';
     };
     AppRoot.prototype.logout = function () {
         this.membershipService.logout()

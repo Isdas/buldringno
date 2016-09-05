@@ -67,18 +67,18 @@ var BoulderProblems = (function (_super) {
     BoulderProblems.prototype.delete = function (problem) {
         var _this = this;
         var _removeResult = new operationResult_1.OperationResult(false, '');
-        this.notificationService.printConfirmationDialog('Are you sure you want to delete the problem?', function () {
+        this.notificationService.printConfirmationDialog('Er du sikker på at du vil slette problemet?', function () {
             _this.dataService.deleteResource(_this._bouldersAPI + problem.Id)
                 .subscribe(function (res) {
                 _removeResult.Succeeded = res.Succeeded;
                 _removeResult.Message = res.Message;
             }, function (error) { return console.error('Error: ' + error); }, function () {
                 if (_removeResult.Succeeded) {
-                    _this.notificationService.printSuccessMessage(problem.Title + ' removed from gallery.');
+                    _this.notificationService.printSuccessMessage(problem.Title + ' fjernet fra bulder.');
                     _this.getBoulderProblems();
                 }
                 else {
-                    _this.notificationService.printErrorMessage('Failed to remove problem');
+                    _this.notificationService.printErrorMessage('Kunne ikke fjerne problemet');
                 }
             });
         });

@@ -48,7 +48,7 @@ var Users = (function (_super) {
             _this._totalCount = data.TotalCount;
         }, function (error) {
             if (error.status == 401 || error.status == 404) {
-                _this.notificationService.printErrorMessage('Authentication required');
+                _this.notificationService.printErrorMessage('Autentisering kreves');
                 _this.utilityService.navigateToSignIn();
             }
         });
