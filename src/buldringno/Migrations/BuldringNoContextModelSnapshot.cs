@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using BuldringNo.Infrastructure;
 
-namespace buldringno.Migrations
+namespace BuldringNo.Migrations
 {
     [DbContext(typeof(BuldringNoContext))]
     partial class BuldringNoContextModelSnapshot : ModelSnapshot

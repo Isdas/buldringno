@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using BuldringNo.Infrastructure;
 
-namespace buldringno.Migrations
+namespace BuldringNo.Migrations
 {
     [DbContext(typeof(BuldringNoContext))]
-    [Migration("20160904165321_initial")]
+    [Migration("20160906185610_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

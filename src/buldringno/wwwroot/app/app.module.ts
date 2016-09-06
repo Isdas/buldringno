@@ -30,4 +30,3 @@ class AppBaseRequestOptions extends BaseRequestOptions {
     bootstrap: [AppRoot]
 })
 export class AppModule { }
-
