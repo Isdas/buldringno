@@ -31,7 +31,7 @@
                 <a [routerLink]="[routes.boulderProblems.name, {id: boulder.Id}]">{{boulder.Title}}</a>
             </h3>
             <p>
-                Problemer: <span class="badge">{{boulderTotalProblems}}</span>
+                Problemer: <span class="badge">{{boulder.TotalProblems}}</span>
             </p>
             <p>{{boulder.Description}}</p>
             <a *ngIf="boulder.TotalProblems > 0" class="btn btn-primary" [routerLink]="[routes.boulderProblems.name, {id: boulder.Id}]">Se problemer</a>
