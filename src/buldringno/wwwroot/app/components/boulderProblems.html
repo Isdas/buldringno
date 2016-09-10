@@ -21,7 +21,7 @@
     <div class="row text-center">
         <div class="col-md-3 col-sm-6 hero-feature" *ngFor="let problem of _problems">
             <div class="thumbnail blue-thumb">
-                <a class="fancybox center-block" rel="gallery" href="{{problem.Uri}}" title="{{problem.Title}}">
+                <a class="fancybox center-block" rel="gallery" href="{{problem.Uri}}" title="{{problem.Title}} {{problem.Grade}} ">
                     <img class="media-object center-block" height="120" src="{{problem.Uri}}" alt="" />
                 </a>
                 <div class="row caption img-caption">
