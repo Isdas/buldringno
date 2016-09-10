@@ -67,7 +67,7 @@ var BoulderProblems = (function (_super) {
         var _this = this;
         var _removeResult = new operationResult_1.OperationResult(false, '');
         this.notificationService.printConfirmationDialog('Er du sikker på at du vil slette problemet?', function () {
-            _this.dataService.deleteResource(_this._bouldersAPI + problem.Id)
+            _this.dataService.deleteResource(_this._problemsAPI + problem.Id)
                 .subscribe(function (res) {
                 _removeResult.Succeeded = res.Succeeded;
                 _removeResult.Message = res.Message;

@@ -74,7 +74,7 @@ export class BoulderProblems extends Paginated implements OnInit {
 
         this.notificationService.printConfirmationDialog('Er du sikker på at du vil slette problemet?',
             () => {
-                this.dataService.deleteResource(this._bouldersAPI + problem.Id)
+                this.dataService.deleteResource(this._problemsAPI + problem.Id)
                     .subscribe(res => {
                         _removeResult.Succeeded = res.Succeeded;
                         _removeResult.Message = res.Message;
