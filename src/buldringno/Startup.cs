@@ -49,8 +49,9 @@ namespace BuldringNo
                 options.UseSqlServer(Configuration["Data:PhotoGalleryConnection:ConnectionString"]));
 
             // Repositories
-            services.AddScoped<IProblemRepository, ProblemRepository>();
+            services.AddScoped<IAreaRepository, AreaRepository>();
             services.AddScoped<IBoulderRepository, BoulderRepository>();
+            services.AddScoped<IProblemRepository, ProblemRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUserRoleRepository, UserRoleRepository>();
             services.AddScoped<IRoleRepository, RoleRepository>();

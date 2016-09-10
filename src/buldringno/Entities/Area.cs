@@ -3,18 +3,16 @@ using System.Collections.Generic;
 
 namespace BuldringNo.Entities
 {
-    public class Boulder : IEntityBase
+    public class Area : IEntityBase
     {
-        public Boulder()
+        public Area()
         {
-            Problems = new List<Problem>(); 
+            Boulders = new List<Boulder>();
         }
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public virtual Area Area { get; set; }
-        public int AreaId { get; set; }
         public DateTime DateCreated { get; set; }
-        public virtual ICollection<Problem> Problems { get; set; }
+        public virtual ICollection<Boulder> Boulders { get; set; }
     }
 }

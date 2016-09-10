@@ -10,7 +10,7 @@ namespace BuldringNo.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Boulder",
+                name: "Area",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -21,7 +21,7 @@ namespace BuldringNo.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Boulder", x => x.Id);
+                    table.PrimaryKey("PK_Area", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -71,24 +71,23 @@ namespace BuldringNo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Problem",
+                name: "Boulder",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    BoulderId = table.Column<int>(nullable: false),
-                    DateUploaded = table.Column<DateTime>(nullable: false),
-                    Grade = table.Column<string>(maxLength: 3, nullable: true),
-                    Title = table.Column<string>(maxLength: 100, nullable: true),
-                    Uri = table.Column<string>(nullable: true)
+                    AreaId = table.Column<int>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    Description = table.Column<string>(maxLength: 500, nullable: true),
+                    Title = table.Column<string>(maxLength: 100, nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Problem", x => x.Id);
+                    table.PrimaryKey("PK_Boulder", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Problem_Boulder_BoulderId",
-                        column: x => x.BoulderId,
-                        principalTable: "Boulder",
+                        name: "FK_Boulder_Area_AreaId",
+                        column: x => x.AreaId,
+                        principalTable: "Area",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -118,6 +117,34 @@ namespace BuldringNo.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Problem",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    BoulderId = table.Column<int>(nullable: false),
+                    DateUploaded = table.Column<DateTime>(nullable: false),
+                    Grade = table.Column<string>(maxLength: 3, nullable: true),
+                    Title = table.Column<string>(maxLength: 100, nullable: true),
+                    Uri = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Problem", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Problem_Boulder_BoulderId",
+                        column: x => x.BoulderId,
+                        principalTable: "Boulder",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Boulder_AreaId",
+                table: "Boulder",
+                column: "AreaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Problem_BoulderId",
@@ -154,6 +181,9 @@ namespace BuldringNo.Migrations
 
             migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+                name: "Area");
         }
     }
 }

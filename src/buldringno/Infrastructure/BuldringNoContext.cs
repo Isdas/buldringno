@@ -8,6 +8,7 @@ namespace BuldringNo.Infrastructure
     {
         public DbSet<Problem> Problems { get; set; }
         public DbSet<Boulder> Boulders { get; set; }
+        public DbSet<Area> Areas { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
@@ -28,9 +29,15 @@ namespace BuldringNo.Infrastructure
             modelBuilder.Entity<Problem>().Property(p => p.Grade).HasMaxLength(3);
 
             // Boulder
-            modelBuilder.Entity<Boulder>().Property(a => a.Title).HasMaxLength(100);
-            modelBuilder.Entity<Boulder>().Property(a => a.Description).HasMaxLength(500);
-            modelBuilder.Entity<Boulder>().HasMany(a => a.Problems).WithOne(p => p.Boulder);
+            modelBuilder.Entity<Boulder>().Property(b => b.Title).HasMaxLength(100);
+            modelBuilder.Entity<Boulder>().Property(b => b.AreaId).IsRequired();
+            modelBuilder.Entity<Boulder>().Property(b => b.Description).HasMaxLength(500);
+            modelBuilder.Entity<Boulder>().HasMany(b => b.Problems).WithOne(b => b.Boulder);
+
+            // Area
+            modelBuilder.Entity<Area>().Property(a => a.Title).HasMaxLength(100);
+            modelBuilder.Entity<Area>().Property(a => a.Description).HasMaxLength(500);
+            modelBuilder.Entity<Area>().HasMany(a => a.Boulders).WithOne(a => a.Area);
 
             // User
             modelBuilder.Entity<User>().Property(u => u.Username).IsRequired().HasMaxLength(100);

@@ -8,7 +8,7 @@ using BuldringNo.Infrastructure;
 namespace BuldringNo.Migrations
 {
     [DbContext(typeof(BuldringNoContext))]
-    [Migration("20160906185610_initial")]
+    [Migration("20160910140547_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -17,7 +17,7 @@ namespace BuldringNo.Migrations
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("BuldringNo.Entities.Boulder", b =>
+            modelBuilder.Entity("BuldringNo.Entities.Area", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
@@ -31,6 +31,28 @@ namespace BuldringNo.Migrations
                         .HasAnnotation("MaxLength", 100);
 
                     b.HasKey("Id");
+
+                    b.ToTable("Area");
+                });
+
+            modelBuilder.Entity("BuldringNo.Entities.Boulder", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AreaId");
+
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<string>("Description")
+                        .HasAnnotation("MaxLength", 500);
+
+                    b.Property<string>("Title")
+                        .HasAnnotation("MaxLength", 100);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AreaId");
 
                     b.ToTable("Boulder");
                 });
@@ -135,6 +157,14 @@ namespace BuldringNo.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("UserRole");
+                });
+
+            modelBuilder.Entity("BuldringNo.Entities.Boulder", b =>
+                {
+                    b.HasOne("BuldringNo.Entities.Area", "Area")
+                        .WithMany("Boulders")
+                        .HasForeignKey("AreaId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("BuldringNo.Entities.Problem", b =>

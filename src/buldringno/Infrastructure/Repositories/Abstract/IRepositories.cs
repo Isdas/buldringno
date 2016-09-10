@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace BuldringNo.Infrastructure.Repositories
 {
+    public interface IAreaRepository : IEntityBaseRepository<Area> { }
+
     public interface IBoulderRepository : IEntityBaseRepository<Boulder> { }
 
     public interface ILoggingRepository : IEntityBaseRepository<Error> { }

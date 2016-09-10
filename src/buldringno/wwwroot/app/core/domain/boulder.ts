@@ -3,20 +3,26 @@
     Title: string;
     Description: string;
     Thumbnail: string;
-    DateCreated: Date;
+    AreaId: number;
+    AreaTitle: string;
     TotalProblems: number;
+    DateCreated: Date;
 
     constructor(id: number,
         title: string,
         description: string,
         thumbnail: string,
-        dateCreated: Date,
-        totalPhotos: number) {
+        areaId: number,
+        areaTitle: string,
+        totalProblems: number,
+        dateCreated: Date) {
         this.Id = id;
         this.Title = title;
         this.Description = description;
         this.Thumbnail = thumbnail;
+        this.AreaId = areaId;
+        this.AreaTitle = areaTitle;
+        this.TotalProblems = totalProblems;
         this.DateCreated = dateCreated;
-        this.TotalProblems = totalPhotos;
     }
 }

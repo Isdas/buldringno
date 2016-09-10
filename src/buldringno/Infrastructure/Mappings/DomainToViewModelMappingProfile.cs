@@ -19,6 +19,9 @@ namespace BuldringNo.Infrastructure.Mappings
                     "/images/" + a.Problems.First().Uri :
                     "/images/thumbnail-default.png"));
 
+            Mapper.CreateMap<Area, AreaViewModel>()
+                .ForMember(vm => vm.TotalBoulders, map => map.MapFrom(a => a.Boulders.Count));
+
             Mapper.CreateMap<User, UserViewModel>();
         }
     }

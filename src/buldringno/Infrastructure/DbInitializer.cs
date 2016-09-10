@@ -1,6 +1,5 @@
 ﻿using BuldringNo.Entities;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -21,15 +20,37 @@ namespace BuldringNo.Infrastructure
         {
             if (!context.Boulders.Any())
             {
-                List<Boulder> _boulders = new List<Boulder>();
                 string[] _images = Directory.GetFiles(Path.Combine(imagesPath, "images"));
+
+                var _area1 = context.Areas.Add(
+                    new Area
+                    {
+                        DateCreated = DateTime.Now,
+                        Title = "Filmplaneten nord",
+                        Description = "Forklaring av Filmplaneten nord"
+                    }).Entity;
+                var _area2 = context.Areas.Add(
+                    new Area
+                    {
+                        DateCreated = DateTime.Now,
+                        Title = "Filmplaneten sør",
+                        Description = "Forklaring av Filmplaneten sør"
+                    }).Entity;
+                var _area3 = context.Areas.Add(
+                    new Area
+                    {
+                        DateCreated = DateTime.Now,
+                        Title = "Lia",
+                        Description = "Forklaring av Lia"
+                    }).Entity;
 
                 var _boulder1 = context.Boulders.Add(
                     new Boulder
                     {
                         DateCreated = DateTime.Now,
                         Title = "Barnehageveggen",
-                        Description = "Veggen rett ved barnehagen."
+                        Description = "Veggen rett ved barnehagen.",
+                        Area = _area1
                     }).Entity;
                 context.Problems.Add(
                      new Problem()
@@ -172,7 +193,8 @@ namespace BuldringNo.Infrastructure
                     {
                         DateCreated = DateTime.Now,
                         Title = "Dallsteinen",
-                        Description = "Liten slopete stein."
+                        Description = "Liten slopete stein.",
+                        Area = _area1
                     }).Entity;
                 context.Problems.Add(
                      new Problem()
@@ -189,7 +211,8 @@ namespace BuldringNo.Infrastructure
                     {
                         DateCreated = DateTime.Now,
                         Title = "Hullet",
-                        Description = "Lang stein med god landing."
+                        Description = "Lang stein med god landing.",
+                        Area = _area1
                     }).Entity;
                 context.Problems.Add(
                      new Problem()
@@ -287,7 +310,8 @@ namespace BuldringNo.Infrastructure
                     {
                         DateCreated = DateTime.Now,
                         Title = "Islas Canarias",
-                        Description = "Stein litt inn fra stien."
+                        Description = "Stein litt inn fra stien.",
+                        Area = _area3
                     }).Entity;
                 context.Problems.Add(
                      new Problem()
@@ -304,7 +328,8 @@ namespace BuldringNo.Infrastructure
                     {
                         DateCreated = DateTime.Now,
                         Title = "Pølse i lompe",
-                        Description = "Stein rett ved et mygghøl."
+                        Description = "Stein rett ved et mygghøl.",
+                        Area = _area2
                     }).Entity;
                 context.Problems.Add(
                      new Problem()
@@ -387,12 +412,6 @@ namespace BuldringNo.Infrastructure
                          Boulder = _boulder5,
                          Grade = "3B"
                      });
-
-                _boulders.Add(_boulder1);
-                _boulders.Add(_boulder2);
-                _boulders.Add(_boulder3);
-                _boulders.Add(_boulder4);
-                _boulders.Add(_boulder5);
 
                 context.SaveChanges();
             }
