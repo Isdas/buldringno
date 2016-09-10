@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="#user of _users">
+            <tr *ngFor="let user of _users">
                 <td>{{user.Username}}</td>
                 <td>{{user.Email}}</td>
             </tr>
@@ -36,7 +36,7 @@
             <ul class="pagination pagination-sm">
                 <li><a *ngIf="_page != 0_" (click)="search(0)"><<</a></li>
                 <li><a *ngIf="_page != 0" (click)="search(_page-1)"><</a></li>
-                <li *ngFor="#n of range()" [ngClass]="{active: n == _page}">
+                <li *ngFor="let n of range()" [ngClass]="{active: n == _page}">
                     <a (click)="search(n)" *ngIf="n != _page">{{n+1}}</a>
                     <span *ngIf="n == _page">{{n+1}}</span>
                 </li>

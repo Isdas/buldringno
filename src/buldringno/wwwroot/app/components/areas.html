@@ -14,7 +14,7 @@
         </div>
     </div>
     <!-- /.row -->
-    <div class="row album-box" *ngFor="#area of _areas">
+    <div class="row album-box" *ngFor="let area of _areas">
         <div class="col-md-1 text-center">
             <p>
                 <i class="fa fa-camera fa-4x"></i>
@@ -42,7 +42,7 @@
             <ul class="pagination pagination-sm">
                 <li><a *ngIf="_page != 0_" (click)="search(0)"><<</a></li>
                 <li><a *ngIf="_page != 0" (click)="search(_page-1)"><</a></li>
-                <li *ngFor="#n of range()" [ngClass]="{active: n == _page}">
+                <li *ngFor="let n of range()" [ngClass]="{active: n == _page}">
                     <a (click)="search(n)" *ngIf="n != _page">{{n+1}}</a>
                     <span *ngIf="n == _page">{{n+1}}</span>
                 </li>

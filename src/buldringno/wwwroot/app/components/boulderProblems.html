@@ -19,7 +19,7 @@
     </div>
 
     <div class="row text-center">
-        <div class="col-md-3 col-sm-6 hero-feature" *ngFor="#problem of _problems">
+        <div class="col-md-3 col-sm-6 hero-feature" *ngFor="let problem of _problems">
             <div class="thumbnail blue-thumb">
                 <a class="fancybox center-block" rel="gallery" href="{{problem.Uri}}" title="{{problem.Title}}">
                     <img class="media-object center-block" height="120" src="{{problem.Uri}}" alt="" />
@@ -49,7 +49,7 @@
             <ul class="pagination pagination-sm">
                 <li><a *ngIf="_page != 0_" (click)="search(0)"><<</a></li>
                 <li><a *ngIf="_page != 0" (click)="search(_page-1)"><</a></li>
-                <li *ngFor="#n of range()" [ngClass]="{active: n == _page}">
+                <li *ngFor="let n of range()" [ngClass]="{active: n == _page}">
                     <a (click)="search(n)" *ngIf="n != _page">{{n+1}}</a>
                     <span *ngIf="n == _page">{{n+1}}</span>
                 </li>
