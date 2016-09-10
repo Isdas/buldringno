@@ -68,7 +68,7 @@ var AreaBoulders = (function (_super) {
         var _this = this;
         var _removeResult = new operationResult_1.OperationResult(false, '');
         this.notificationService.printConfirmationDialog('Er du sikker på at du vil slette bulderet?', function () {
-            _this.dataService.deleteResource(_this._areasAPI + boulder.Id)
+            _this.dataService.deleteResource(_this._bouldersAPI + boulder.Id)
                 .subscribe(function (res) {
                 _removeResult.Succeeded = res.Succeeded;
                 _removeResult.Message = res.Message;

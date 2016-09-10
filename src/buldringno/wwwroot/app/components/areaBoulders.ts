@@ -76,7 +76,7 @@ export class AreaBoulders extends Paginated implements OnInit {
 
         this.notificationService.printConfirmationDialog('Er du sikker på at du vil slette bulderet?',
             () => {
-                this.dataService.deleteResource(this._areasAPI + boulder.Id)
+                this.dataService.deleteResource(this._bouldersAPI + boulder.Id)
                     .subscribe(res => {
                         _removeResult.Succeeded = res.Succeeded;
                         _removeResult.Message = res.Message;

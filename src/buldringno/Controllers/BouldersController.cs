@@ -108,5 +108,39 @@ namespace BuldringNo.Controllers
 
             return pagedSet;
         }
+
+        [HttpDelete("{id:int}")]
+        public IActionResult Delete(int id)
+        {
+            IActionResult _result = new ObjectResult(false);
+            GenericResult _removeResult = null;
+
+            try
+            {
+                Boulder _boulderToRemove = this._boulderRepository.GetSingle(id);
+                _boulderRepository.Delete(_boulderToRemove);
+                _boulderRepository.Commit();
+
+                _removeResult = new GenericResult()
+                {
+                    Succeeded = true,
+                    Message = "Bulder fjernet."
+                };
+            }
+            catch (Exception ex)
+            {
+                _removeResult = new GenericResult()
+                {
+                    Succeeded = false,
+                    Message = ex.Message
+                };
+
+                _loggingRepository.Add(new Error() { Message = ex.Message, StackTrace = ex.StackTrace, DateCreated = DateTime.Now });
+                _loggingRepository.Commit();
+            }
+
+            _result = new ObjectResult(_removeResult);
+            return _result;
+        }
     }
 }
