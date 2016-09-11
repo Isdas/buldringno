@@ -1,6 +1,5 @@
 ﻿import { Route, Router } from '@angular/router-deprecated';
 import { Home } from './components/home';
-import { Problems } from './components/problems';
 import { ProblemsList } from './components/problemsList';
 import { Areas } from './components/areas';
 import { AreaBoulders } from './components/areaBoulders';
@@ -12,7 +11,6 @@ import { About } from './components/about';
 
 export var Routes = {
     home: new Route({ path: '/', name: 'Home', component: Home }),
-    problems: new Route({ path: '/problems', name: 'Problems', component: Problems }),
     problemsList: new Route({ path: '/problems/:id', name: 'ProblemsList', component: ProblemsList }),
     areas: new Route({ path: '/areas', name: 'Areas', component: Areas }),
     areaBoulders: new Route({ path: '/areas/:id/boulders', name: 'AreaBoulders', component: AreaBoulders }),

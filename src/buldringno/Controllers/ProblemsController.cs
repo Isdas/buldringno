@@ -25,47 +25,6 @@ namespace BuldringNo.Controllers
             _loggingRepository = loggingRepository;
         }
 
-        [HttpGet("{page:int=0}/{pageSize=12}")]
-        public PaginationSet<ProblemViewModel> Get(int? page, int? pageSize)
-        {
-            PaginationSet<ProblemViewModel> pagedSet = null;
-
-            try
-            {
-                int currentPage = page.Value;
-                int currentPageSize = pageSize.Value;
-
-                List<Problem> _problems = null;
-                int _totalProblems = new int();
-
-                _problems = _problemRepository
-                    .AllIncluding(p => p.Boulder)
-                    .OrderBy(p => p.Id)
-                    .Skip(currentPage * currentPageSize)
-                    .Take(currentPageSize)
-                    .ToList();
-
-                _totalProblems = _problemRepository.GetAll().Count();
-
-                IEnumerable<ProblemViewModel> _problemsVM = Mapper.Map<IEnumerable<Problem>, IEnumerable<ProblemViewModel>>(_problems);
-
-                pagedSet = new PaginationSet<ProblemViewModel>()
-                {
-                    Page = currentPage,
-                    TotalCount = _totalProblems,
-                    TotalPages = (int)Math.Ceiling((decimal)_totalProblems / currentPageSize),
-                    Items = _problemsVM
-                };
-            }
-            catch (Exception ex)
-            {
-                _loggingRepository.Add(new Error() { Message = ex.Message, StackTrace = ex.StackTrace, DateCreated = DateTime.Now });
-                _loggingRepository.Commit();
-            }
-
-            return pagedSet;
-        }
-
         [HttpGet("{id:int}/problems/{page:int=0}/{pageSize=12}")]
         public PaginationSet<ProblemViewModel> Get(int id, int? page, int? pageSize)
         {
