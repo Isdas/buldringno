@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using buldringno.Helpers;
 using BuldringNo.Entities;
 using BuldringNo.Infrastructure.Core;
 using BuldringNo.Infrastructure.Repositories;
@@ -45,6 +46,44 @@ namespace BuldringNo.Controllers
                     .ToList();
 
                 _totalProblems = _problemRepository.GetAll().Count();
+
+                IEnumerable<ProblemViewModel> _problemsVM = Mapper.Map<IEnumerable<Problem>, IEnumerable<ProblemViewModel>>(_problems);
+
+                pagedSet = new PaginationSet<ProblemViewModel>()
+                {
+                    Page = currentPage,
+                    TotalCount = _totalProblems,
+                    TotalPages = (int)Math.Ceiling((decimal)_totalProblems / currentPageSize),
+                    Items = _problemsVM
+                };
+            }
+            catch (Exception ex)
+            {
+                _loggingRepository.Add(new Error() { Message = ex.Message, StackTrace = ex.StackTrace, DateCreated = DateTime.Now });
+                _loggingRepository.Commit();
+            }
+
+            return pagedSet;
+        }
+
+        [HttpGet("{id:int}/problems/{page:int=0}/{pageSize=12}")]
+        public PaginationSet<ProblemViewModel> Get(int id, int? page, int? pageSize)
+        {
+            PaginationSet<ProblemViewModel> pagedSet = null;
+
+            try
+            {
+                int currentPage = page.Value;
+                int currentPageSize = pageSize.Value;
+
+                List<Problem> _problems = null;
+                int _totalProblems = new int();
+                GradeConverter gradeConverter = new GradeConverter();
+                var fontGrade = gradeConverter.GetFontGradeFromID(id);
+
+                _problems = _problemRepository.GetAll().Where(p => p.Grade.Contains(fontGrade)).ToList();
+
+                _totalProblems = _problems.Count();
 
                 IEnumerable<ProblemViewModel> _problemsVM = Mapper.Map<IEnumerable<Problem>, IEnumerable<ProblemViewModel>>(_problems);
 

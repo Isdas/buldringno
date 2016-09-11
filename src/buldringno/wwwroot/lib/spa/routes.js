@@ -2,6 +2,7 @@
 var router_deprecated_1 = require('@angular/router-deprecated');
 var home_1 = require('./components/home');
 var problems_1 = require('./components/problems');
+var problemsList_1 = require('./components/problemsList');
 var areas_1 = require('./components/areas');
 var areaBoulders_1 = require('./components/areaBoulders');
 var boulders_1 = require('./components/boulders');
@@ -12,6 +13,7 @@ var about_1 = require('./components/about');
 exports.Routes = {
     home: new router_deprecated_1.Route({ path: '/', name: 'Home', component: home_1.Home }),
     problems: new router_deprecated_1.Route({ path: '/problems', name: 'Problems', component: problems_1.Problems }),
+    problemsList: new router_deprecated_1.Route({ path: '/problems/:id', name: 'ProblemsList', component: problemsList_1.ProblemsList }),
     areas: new router_deprecated_1.Route({ path: '/areas', name: 'Areas', component: areas_1.Areas }),
     areaBoulders: new router_deprecated_1.Route({ path: '/areas/:id/boulders', name: 'AreaBoulders', component: areaBoulders_1.AreaBoulders }),
     boulders: new router_deprecated_1.Route({ path: '/boulders', name: 'Boulders', component: boulders_1.Boulders }),

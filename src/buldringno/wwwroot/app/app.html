@@ -15,6 +15,23 @@
                 <li><a [routerLink]="[routes.boulders.name]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Bulder</a></li>
                 <li><a [routerLink]="[routes.problems.name]"><i class="fa fa-camera fa-fw"></i>&nbsp;Problemer</a></li>
                 <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i>&nbsp;Lister<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a [routerLink]="[routes.problemsList.name, {id: 0}]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Grad 3</a></li>
+                        <li><a [routerLink]="[routes.problemsList.name, {id: 1}]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Grad 4</a></li>
+                        <li><a [routerLink]="[routes.problemsList.name, {id: 2}]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Grad 5</a></li>
+                        <li><a [routerLink]="[routes.problemsList.name, {id: 3}]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Grad 6A</a></li>
+                        <li><a [routerLink]="[routes.problemsList.name, {id: 4}]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Grad 6B</a></li>
+                        <li><a [routerLink]="[routes.problemsList.name, {id: 5}]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Grad 6C</a></li>
+                        <li><a [routerLink]="[routes.problemsList.name, {id: 6}]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Grad 7A</a></li>
+                        <li><a [routerLink]="[routes.problemsList.name, {id: 7}]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Grad 7B</a></li>
+                        <li><a [routerLink]="[routes.problemsList.name, {id: 8}]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Grad 7C</a></li>
+                        <li><a [routerLink]="[routes.problemsList.name, {id: 9}]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Grad 8A</a></li>
+                        <li><a [routerLink]="[routes.problemsList.name, {id: 10}]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Grad 8B</a></li>
+                        <li><a [routerLink]="[routes.problemsList.name, {id: 11}]"><i class="fa fa-picture-o fa-fw"></i>&nbsp;Grad 8C</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user fa-fw"></i>&nbsp;{{getUserName()}}<b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li *ngIf="!isUserLoggedIn()">
