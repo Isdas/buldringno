@@ -25,13 +25,23 @@ namespace BuldringNo.Infrastructure
 
             // Problems
             modelBuilder.Entity<Problem>().Property(p => p.Title).HasMaxLength(100);
+            modelBuilder.Entity<Problem>().Property(b => b.DescriptionMain).HasMaxLength(250);
+            modelBuilder.Entity<Problem>().Property(b => b.DescriptionSecondary).HasMaxLength(1000);
             modelBuilder.Entity<Problem>().Property(p => p.BoulderId).IsRequired();
-            modelBuilder.Entity<Problem>().Property(p => p.Grade).HasMaxLength(3);
+            modelBuilder.Entity<Problem>().Property(p => p.GradeStandingStart).HasMaxLength(3);
+            modelBuilder.Entity<Problem>().Property(p => p.GradeSitStart).HasMaxLength(3);
+            modelBuilder.Entity<Problem>().Property(p => p.Height).HasMaxLength(3);
+            modelBuilder.Entity<Problem>().Property(p => p.NumberOfStars).HasMaxLength(1);
+            modelBuilder.Entity<Problem>().Property(p => p.NumberOfPads).HasMaxLength(1);
+            modelBuilder.Entity<Problem>().Property(p => p.FirstClimberStanding).HasMaxLength(100);
+            modelBuilder.Entity<Problem>().Property(p => p.FirstClimberSitStart).HasMaxLength(100);
+            modelBuilder.Entity<Problem>().Property(p => p.FirstClimberStandingDate).HasMaxLength(100);
+            modelBuilder.Entity<Problem>().Property(p => p.FirstClimberSitStartDate).HasMaxLength(100);
 
             // Boulder
             modelBuilder.Entity<Boulder>().Property(b => b.Title).HasMaxLength(100);
-            modelBuilder.Entity<Boulder>().Property(b => b.AreaId).IsRequired();
             modelBuilder.Entity<Boulder>().Property(b => b.Description).HasMaxLength(500);
+            modelBuilder.Entity<Boulder>().Property(b => b.AreaId).IsRequired();
             modelBuilder.Entity<Boulder>().HasMany(b => b.Problems).WithOne(b => b.Boulder);
 
             // Area

@@ -40,7 +40,7 @@ namespace BuldringNo.Controllers
                 GradeConverter gradeConverter = new GradeConverter();
                 var fontGrade = gradeConverter.GetFontGradeFromID(id);
 
-                _problems = _problemRepository.GetAll().Where(p => p.Grade.Contains(fontGrade)).ToList();
+                _problems = _problemRepository.GetAll().Where(p => p.GradeStandingStart.Contains(fontGrade)).ToList();
 
                 _totalProblems = _problems.Count();
 

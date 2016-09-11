@@ -59,7 +59,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "5B"
+                         GradeStandingStart = "5B"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -68,7 +68,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "6B+"
+                         GradeStandingStart = "6B+"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -77,7 +77,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "7A"
+                         GradeStandingStart = "7A"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -86,7 +86,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "6A"
+                         GradeStandingStart = "6A"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -95,7 +95,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "7A"
+                         GradeStandingStart = "7A"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -104,7 +104,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "6B"
+                         GradeStandingStart = "6B"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -113,7 +113,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "7B+"
+                         GradeStandingStart = "7B+"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -122,7 +122,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "7B+"
+                         GradeStandingStart = "7B+"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -131,7 +131,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "7A+"
+                         GradeStandingStart = "7A+"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -140,7 +140,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "6A"
+                         GradeStandingStart = "6A"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -149,7 +149,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "6C+"
+                         GradeStandingStart = "6C+"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -158,7 +158,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "6C"
+                         GradeStandingStart = "6C"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -167,7 +167,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "5A"
+                         GradeStandingStart = "5A"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -176,7 +176,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "6B+"
+                         GradeStandingStart = "6B+"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -185,7 +185,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[0]),
                          Boulder = _boulder1,
-                         Grade = "3B"
+                         GradeStandingStart = "3B"
                      });
 
                 var _boulder2 = context.Boulders.Add(
@@ -203,7 +203,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[1]),
                          Boulder = _boulder2,
-                         Grade = "7A"
+                         GradeStandingStart = "7A"
                      });
 
                 var _boulder3 = context.Boulders.Add(
@@ -221,7 +221,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[2]),
                          Boulder = _boulder3,
-                         Grade = "3B"
+                         GradeStandingStart = "3B"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -230,7 +230,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[2]),
                          Boulder = _boulder3,
-                         Grade = "5C"
+                         GradeStandingStart = "5C"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -239,7 +239,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[2]),
                          Boulder = _boulder3,
-                         Grade = "6B+"
+                         GradeStandingStart = "6B+"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -248,7 +248,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[2]),
                          Boulder = _boulder3,
-                         Grade = "6C+"
+                         GradeStandingStart = "6C+"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -257,7 +257,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[2]),
                          Boulder = _boulder3,
-                         Grade = "7B"
+                         GradeStandingStart = "7B"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -266,7 +266,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[2]),
                          Boulder = _boulder3,
-                         Grade = "7B"
+                         GradeStandingStart = "7B"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -275,7 +275,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[2]),
                          Boulder = _boulder3,
-                         Grade = "7A"
+                         GradeStandingStart = "7A"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -284,7 +284,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[2]),
                          Boulder = _boulder3,
-                         Grade = "7A"
+                         GradeStandingStart = "7A"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -293,7 +293,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[2]),
                          Boulder = _boulder3,
-                         Grade = "5C"
+                         GradeStandingStart = "5C"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -302,7 +302,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[2]),
                          Boulder = _boulder3,
-                         Grade = "3B"
+                         GradeStandingStart = "3B"
                      });
 
                 var _boulder4 = context.Boulders.Add(
@@ -320,7 +320,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[3]),
                          Boulder = _boulder4,
-                         Grade = "7A+"
+                         GradeStandingStart = "7A+"
                      });
 
                 var _boulder5 = context.Boulders.Add(
@@ -338,7 +338,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[4]),
                          Boulder = _boulder5,
-                         Grade = "5A"
+                         GradeStandingStart = "5A"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -347,7 +347,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[4]),
                          Boulder = _boulder5,
-                         Grade = "7A"
+                         GradeStandingStart = "7A"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -356,7 +356,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[4]),
                          Boulder = _boulder5,
-                         Grade = "3C"
+                         GradeStandingStart = "3C"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -365,7 +365,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[4]),
                          Boulder = _boulder5,
-                         Grade = "5B"
+                         GradeStandingStart = "5B"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -374,7 +374,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[4]),
                          Boulder = _boulder5,
-                         Grade = "6A"
+                         GradeStandingStart = "6A"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -383,7 +383,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[4]),
                          Boulder = _boulder5,
-                         Grade = "7A+"
+                         GradeStandingStart = "7A+"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -392,7 +392,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[4]),
                          Boulder = _boulder5,
-                         Grade = "6C+"
+                         GradeStandingStart = "6C+"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -401,7 +401,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[4]),
                          Boulder = _boulder5,
-                         Grade = "7B"
+                         GradeStandingStart = "7B"
                      });
                 context.Problems.Add(
                      new Problem()
@@ -410,7 +410,7 @@ namespace BuldringNo.Infrastructure
                          DateUploaded = DateTime.Now,
                          Uri = Path.GetFileName(_images[4]),
                          Boulder = _boulder5,
-                         Grade = "3B"
+                         GradeStandingStart = "3B"
                      });
 
                 context.SaveChanges();
