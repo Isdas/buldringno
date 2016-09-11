@@ -49,7 +49,7 @@ namespace BuldringNo.Infrastructure
                     {
                         DateCreated = DateTime.Now,
                         Title = "Barnehageveggen",
-                        Description = "Veggen rett ved barnehagen.",
+                        DescriptionMain = "Veggen rett ved barnehagen.",
                         Area = _area1
                     }).Entity;
                 context.Problems.Add(
@@ -193,7 +193,7 @@ namespace BuldringNo.Infrastructure
                     {
                         DateCreated = DateTime.Now,
                         Title = "Dallsteinen",
-                        Description = "Liten slopete stein.",
+                        DescriptionMain = "Liten slopete stein.",
                         Area = _area1
                     }).Entity;
                 context.Problems.Add(
@@ -211,7 +211,7 @@ namespace BuldringNo.Infrastructure
                     {
                         DateCreated = DateTime.Now,
                         Title = "Hullet",
-                        Description = "Lang stein med god landing.",
+                        DescriptionMain = "Lang stein med god landing.",
                         Area = _area1
                     }).Entity;
                 context.Problems.Add(
@@ -310,7 +310,7 @@ namespace BuldringNo.Infrastructure
                     {
                         DateCreated = DateTime.Now,
                         Title = "Islas Canarias",
-                        Description = "Stein litt inn fra stien.",
+                        DescriptionMain = "Stein litt inn fra stien.",
                         Area = _area3
                     }).Entity;
                 context.Problems.Add(
@@ -328,7 +328,7 @@ namespace BuldringNo.Infrastructure
                     {
                         DateCreated = DateTime.Now,
                         Title = "Pølse i lompe",
-                        Description = "Stein rett ved et mygghøl.",
+                        DescriptionMain = "Stein rett ved et mygghøl.",
                         Area = _area2
                     }).Entity;
                 context.Problems.Add(
