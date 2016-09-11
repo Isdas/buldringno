@@ -42,7 +42,7 @@ var ProblemsList = (function (_super) {
             _this._page = data.Page;
             _this._pagesCount = data.TotalPages;
             _this._totalCount = data.TotalCount;
-            _this._problemsGradeID = _this._problems[0].Grade;
+            _this._problemsGrade = _this._problems[0].Grade.replace("+", "").replace("-", "");
         }, function (error) { return console.error('Error: ' + error); });
     };
     ProblemsList.prototype.search = function (i) {
