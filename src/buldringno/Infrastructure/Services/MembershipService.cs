@@ -47,7 +47,7 @@ namespace BuldringNo.Infrastructure.Services
             var existingUser = _userRepository.GetSingleByUsername(username);
 
             if (existingUser != null)
-                throw new Exception("Username is already in use");
+                throw new Exception("Brukernavn er allerede brukt");
 
             var passwordSalt = _encryptionService.CreateSalt();
 
@@ -100,7 +100,7 @@ namespace BuldringNo.Infrastructure.Services
         {
             var role = _roleRepository.GetSingle(roleId);
             if (role == null)
-                throw new Exception("Role doesn't exist.");
+                throw new Exception("Rolle eksisterer ikke.");
 
             var userRole = new UserRole()
             {
