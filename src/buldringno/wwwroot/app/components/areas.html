@@ -15,12 +15,6 @@
     </div>
     <!-- /.row -->
     <div class="row album-box" *ngFor="let area of _areas">
-        <div class="col-md-1 text-center">
-            <p>
-                <i class="fa fa-camera fa-4x"></i>
-            </p>
-            <p>{{convertDateTime(area.DateCreated)}}</p>
-        </div>
         <div class="col-md-6">
             <h3>
                 <a [routerLink]="[routes.areaBoulders.name, {id: area.Id}]">{{area.Title}}</a>
@@ -28,8 +22,8 @@
             <p>
                 Bulder: <span class="badge">{{area.TotalBoulders}}</span>
             </p>
-            <p>{{area.Description}}</p>
-            <a *ngIf="area.TotalBoulders > 0" class="btn btn-primary" [routerLink]="[routes.areaBoulders.name, {id: area.Id}]">Se bulder</a>
+            <p>{{area.DescriptionMain}}</p>
+            <a class="btn btn-primary" [routerLink]="[routes.areaBoulders.name, {id: area.Id}]">Se område</a>
         </div>
         <hr />
     </div>
