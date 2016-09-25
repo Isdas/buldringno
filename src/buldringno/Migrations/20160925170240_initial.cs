@@ -15,8 +15,11 @@ namespace BuldringNo.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ApproachTime = table.Column<string>(maxLength: 100, nullable: true),
                     DateCreated = table.Column<DateTime>(nullable: false),
-                    Description = table.Column<string>(maxLength: 500, nullable: true),
+                    DescriptionMain = table.Column<string>(maxLength: 250, nullable: true),
+                    DescriptionSecondary = table.Column<string>(maxLength: 1000, nullable: true),
+                    Parking = table.Column<string>(maxLength: 100, nullable: true),
                     Title = table.Column<string>(maxLength: 100, nullable: true)
                 },
                 constraints: table =>
@@ -78,7 +81,11 @@ namespace BuldringNo.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     AreaId = table.Column<int>(nullable: false),
                     DateCreated = table.Column<DateTime>(nullable: false),
-                    Description = table.Column<string>(maxLength: 500, nullable: true),
+                    DescriptionMain = table.Column<string>(maxLength: 250, nullable: true),
+                    DescriptionSecondary = table.Column<string>(maxLength: 1000, nullable: true),
+                    GPSNorth = table.Column<double>(maxLength: 10, nullable: false),
+                    GPSSouth = table.Column<double>(maxLength: 10, nullable: false),
+                    Return = table.Column<string>(maxLength: 100, nullable: true),
                     Title = table.Column<string>(maxLength: 100, nullable: true)
                 },
                 constraints: table =>
@@ -126,7 +133,17 @@ namespace BuldringNo.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     BoulderId = table.Column<int>(nullable: false),
                     DateUploaded = table.Column<DateTime>(nullable: false),
-                    Grade = table.Column<string>(maxLength: 3, nullable: true),
+                    DescriptionMain = table.Column<string>(maxLength: 250, nullable: true),
+                    DescriptionSecondary = table.Column<string>(maxLength: 1000, nullable: true),
+                    FirstClimberSitStart = table.Column<string>(maxLength: 100, nullable: true),
+                    FirstClimberSitStartDate = table.Column<DateTime>(maxLength: 100, nullable: false),
+                    FirstClimberStanding = table.Column<string>(maxLength: 100, nullable: true),
+                    FirstClimberStandingDate = table.Column<DateTime>(maxLength: 100, nullable: false),
+                    GradeSitStart = table.Column<string>(maxLength: 3, nullable: true),
+                    GradeStandingStart = table.Column<string>(maxLength: 3, nullable: true),
+                    Height = table.Column<double>(maxLength: 3, nullable: false),
+                    NumberOfPads = table.Column<int>(maxLength: 1, nullable: false),
+                    NumberOfStars = table.Column<int>(maxLength: 1, nullable: false),
                     Title = table.Column<string>(maxLength: 100, nullable: true),
                     Uri = table.Column<string>(nullable: true)
                 },

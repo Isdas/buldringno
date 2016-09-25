@@ -9,12 +9,12 @@ import { NotificationService } from '../core/services/notificationService';
 import { OperationResult } from '../core/domain/operationResult';
 
 @Component({
-    selector: 'area-boulder',
+    selector: 'area',
     providers: [NotificationService],
-    templateUrl: './app/components/areaBoulders.html',
+    templateUrl: './app/components/area.html',
     directives: [RouterLink]
 })
-export class AreaBoulders extends Paginated implements OnInit {
+export class Area extends Paginated implements OnInit {
     private _areasAPI: string = 'api/areas/';
     private _bouldersAPI: string = 'api/boulders/';
     private _areaId: string;

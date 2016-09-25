@@ -13,15 +13,16 @@
                     <a [routerLink]="['/Areas']">Områder</a>
                 </li>
                 <li>{{_areaTitle}}</li>
-                <li class="active">Bulder</li>
+                <li class="active">Område</li>
             </ol>
         </div>
     </div>
 
-    <div class="row album-box" *ngFor="let boulder of _boulders">
+    <div class="row album-box" *ngFor="let area of _areas">
         <div class="col-md-6">
-            <h3>{{boulder.Title}}</h3>
-            <p>{{boulder.Description}}</p>
+            <h3>{{area.Title}}</h3>
+            <p>{{area.DescriptionMain}}</p>
+            <p>{{area.DescriptionSecondary}}</p>
             <div class="col-xs-2 buttonCaption">
                 <button class="btn btn-xs btn-danger" (click)="delete(boulder)">
                     <span class="fa-stack fa-1x">

@@ -2,7 +2,7 @@
 import { Home } from './components/home';
 import { ProblemsList } from './components/problemsList';
 import { Areas } from './components/areas';
-import { AreaBoulders } from './components/areaBoulders';
+import { Area } from './components/area';
 import { Boulders } from './components/boulders';
 import { BoulderProblems } from './components/boulderProblems';
 import { Account } from './components/account/account';
@@ -13,7 +13,7 @@ export var Routes = {
     home: new Route({ path: '/', name: 'Home', component: Home }),
     problemsList: new Route({ path: '/problems/:id', name: 'ProblemsList', component: ProblemsList }),
     areas: new Route({ path: '/areas', name: 'Areas', component: Areas }),
-    areaBoulders: new Route({ path: '/areas/:id/boulders', name: 'AreaBoulders', component: AreaBoulders }),
+    area: new Route({ path: '/areas/:id/boulders', name: 'Area', component: Area }),
     boulders: new Route({ path: '/boulders', name: 'Boulders', component: Boulders }),
     boulderProblems: new Route({ path: '/boulders/:id/problems', name: 'BoulderProblems', component: BoulderProblems }),
     account: new Route({ path: '/account/...', name: 'Account', component: Account }),

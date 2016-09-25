@@ -8,7 +8,7 @@ using BuldringNo.Infrastructure;
 namespace BuldringNo.Migrations
 {
     [DbContext(typeof(BuldringNoContext))]
-    [Migration("20160910140547_initial")]
+    [Migration("20160925170240_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,10 +22,19 @@ namespace BuldringNo.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("ApproachTime")
+                        .HasAnnotation("MaxLength", 100);
+
                     b.Property<DateTime>("DateCreated");
 
-                    b.Property<string>("Description")
-                        .HasAnnotation("MaxLength", 500);
+                    b.Property<string>("DescriptionMain")
+                        .HasAnnotation("MaxLength", 250);
+
+                    b.Property<string>("DescriptionSecondary")
+                        .HasAnnotation("MaxLength", 1000);
+
+                    b.Property<string>("Parking")
+                        .HasAnnotation("MaxLength", 100);
 
                     b.Property<string>("Title")
                         .HasAnnotation("MaxLength", 100);
@@ -44,8 +53,20 @@ namespace BuldringNo.Migrations
 
                     b.Property<DateTime>("DateCreated");
 
-                    b.Property<string>("Description")
-                        .HasAnnotation("MaxLength", 500);
+                    b.Property<string>("DescriptionMain")
+                        .HasAnnotation("MaxLength", 250);
+
+                    b.Property<string>("DescriptionSecondary")
+                        .HasAnnotation("MaxLength", 1000);
+
+                    b.Property<double>("GPSNorth")
+                        .HasAnnotation("MaxLength", 10);
+
+                    b.Property<double>("GPSSouth")
+                        .HasAnnotation("MaxLength", 10);
+
+                    b.Property<string>("Return")
+                        .HasAnnotation("MaxLength", 100);
 
                     b.Property<string>("Title")
                         .HasAnnotation("MaxLength", 100);
@@ -82,8 +103,38 @@ namespace BuldringNo.Migrations
 
                     b.Property<DateTime>("DateUploaded");
 
-                    b.Property<string>("Grade")
+                    b.Property<string>("DescriptionMain")
+                        .HasAnnotation("MaxLength", 250);
+
+                    b.Property<string>("DescriptionSecondary")
+                        .HasAnnotation("MaxLength", 1000);
+
+                    b.Property<string>("FirstClimberSitStart")
+                        .HasAnnotation("MaxLength", 100);
+
+                    b.Property<DateTime>("FirstClimberSitStartDate")
+                        .HasAnnotation("MaxLength", 100);
+
+                    b.Property<string>("FirstClimberStanding")
+                        .HasAnnotation("MaxLength", 100);
+
+                    b.Property<DateTime>("FirstClimberStandingDate")
+                        .HasAnnotation("MaxLength", 100);
+
+                    b.Property<string>("GradeSitStart")
                         .HasAnnotation("MaxLength", 3);
+
+                    b.Property<string>("GradeStandingStart")
+                        .HasAnnotation("MaxLength", 3);
+
+                    b.Property<double>("Height")
+                        .HasAnnotation("MaxLength", 3);
+
+                    b.Property<int>("NumberOfPads")
+                        .HasAnnotation("MaxLength", 1);
+
+                    b.Property<int>("NumberOfStars")
+                        .HasAnnotation("MaxLength", 1);
 
                     b.Property<string>("Title")
                         .HasAnnotation("MaxLength", 100);
