@@ -27,21 +27,24 @@ namespace BuldringNo.Infrastructure
                     {
                         DateCreated = DateTime.Now,
                         Title = "Filmplaneten nord",
-                        Description = "Forklaring av Filmplaneten nord"
+                        DescriptionMain = "Hovedforklaring av Filmplaneten nord",
+                        DescriptionSecondary = "Utfyllende tekst om Filmplaneten nord"
                     }).Entity;
                 var _area2 = context.Areas.Add(
                     new Area
                     {
                         DateCreated = DateTime.Now,
                         Title = "Filmplaneten sør",
-                        Description = "Forklaring av Filmplaneten sør"
+                        DescriptionMain = "Hovedforklaring av Filmplaneten sør",
+                        DescriptionSecondary = "Utfyllende tekst om Filmplaneten sør"
                     }).Entity;
                 var _area3 = context.Areas.Add(
                     new Area
                     {
                         DateCreated = DateTime.Now,
                         Title = "Lia",
-                        Description = "Forklaring av Lia"
+                        DescriptionMain = "Hovedforklaring av Lia",
+                        DescriptionSecondary = "Utfyllende tekst om Lia"
                     }).Entity;
 
                 var _boulder1 = context.Boulders.Add(

@@ -50,7 +50,10 @@ namespace BuldringNo.Infrastructure
 
             // Area
             modelBuilder.Entity<Area>().Property(a => a.Title).HasMaxLength(100);
-            modelBuilder.Entity<Area>().Property(a => a.Description).HasMaxLength(500);
+            modelBuilder.Entity<Area>().Property(a => a.DescriptionMain).HasMaxLength(250);
+            modelBuilder.Entity<Area>().Property(a => a.DescriptionSecondary).HasMaxLength(1000);
+            modelBuilder.Entity<Area>().Property(a => a.Parking).HasMaxLength(100);
+            modelBuilder.Entity<Area>().Property(a => a.ApproachTime).HasMaxLength(100);
             modelBuilder.Entity<Area>().HasMany(a => a.Boulders).WithOne(a => a.Area);
 
             // User
