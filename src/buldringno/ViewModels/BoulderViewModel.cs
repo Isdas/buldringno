@@ -8,7 +8,6 @@ namespace BuldringNo.ViewModels
         public string Title { get; set; }
         public string DescriptionMain { get; set; }
         public string DescriptionSecondary { get; set; }
-        public string Size { get; set; }
         public string Return { get; set; }
         public double GPSNorth { get; set; }
         public double GPSSouth { get; set; }

@@ -42,7 +42,6 @@ namespace BuldringNo.Infrastructure
             modelBuilder.Entity<Boulder>().Property(b => b.Title).HasMaxLength(100);
             modelBuilder.Entity<Boulder>().Property(b => b.DescriptionMain).HasMaxLength(250);
             modelBuilder.Entity<Boulder>().Property(b => b.DescriptionSecondary).HasMaxLength(1000);
-            modelBuilder.Entity<Boulder>().Property(b => b.Size).HasMaxLength(100);
             modelBuilder.Entity<Boulder>().Property(b => b.Return).HasMaxLength(100);
             modelBuilder.Entity<Boulder>().Property(b => b.GPSNorth).HasMaxLength(10);
             modelBuilder.Entity<Boulder>().Property(b => b.GPSSouth).HasMaxLength(10);
