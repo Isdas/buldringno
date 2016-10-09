@@ -1,7 +1,8 @@
 ﻿export class Boulder {
     Id: number;
     Title: string;
-    Description: string;
+    DescriptionMain: string;
+    DescriptionSecondary: string;
     Thumbnail: string;
     AreaId: number;
     AreaTitle: string;
@@ -10,7 +11,8 @@
 
     constructor(id: number,
         title: string,
-        description: string,
+        descriptionMain: string,
+        descriptionSecondary: string,
         thumbnail: string,
         areaId: number,
         areaTitle: string,
@@ -18,7 +20,8 @@
         dateCreated: Date) {
         this.Id = id;
         this.Title = title;
-        this.Description = description;
+        this.DescriptionMain = descriptionMain;
+        this.DescriptionSecondary = descriptionSecondary;
         this.Thumbnail = thumbnail;
         this.AreaId = areaId;
         this.AreaTitle = areaTitle;

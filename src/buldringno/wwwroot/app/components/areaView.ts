@@ -1,6 +1,7 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { CORE_DIRECTIVES, FORM_DIRECTIVES } from '@angular/common';
 import { RouterLink, RouteParams } from '@angular/router-deprecated'
+import { Area } from '../core/domain/area';
 import { Boulder } from '../core/domain/boulder';
 import { Paginated } from '../core/common/paginated';
 import { DataService } from '../core/services/dataService';
@@ -9,19 +10,18 @@ import { NotificationService } from '../core/services/notificationService';
 import { OperationResult } from '../core/domain/operationResult';
 
 @Component({
-    selector: 'area-boulder',
+    selector: 'areaView',
     providers: [NotificationService],
-    templateUrl: './app/components/areaBoulders.html',
+    templateUrl: './app/components/areaView.html',
     directives: [RouterLink]
 })
-export class AreaBoulders extends Paginated implements OnInit {
-    private _areasAPI: string = 'api/areas/';
-    private _bouldersAPI: string = 'api/boulders/';
+export class AreaView extends Paginated implements OnInit {
+    private _areasAPI : string = 'api/areas/';
     private _areaId: string;
+    private _area: Area;
     private _boulders: Array<Boulder>;
     private _displayingTotal: number;
     private _areaTitle: string;
-    private _numberOfProblems: number;
 
     constructor(public dataService: DataService,
                 public utilityService: UtilityService,
@@ -49,7 +49,6 @@ export class AreaBoulders extends Paginated implements OnInit {
                 this._pagesCount = data.TotalPages;
                 this._totalCount = data.TotalCount;
                 this._areaTitle = this._boulders[0].AreaTitle;
-                this._numberOfProblems = this._boulders[0].TotalProblems;
             },
             error => {
 
@@ -76,7 +75,7 @@ export class AreaBoulders extends Paginated implements OnInit {
 
         this.notificationService.printConfirmationDialog('Er du sikker på at du vil slette bulderet?',
             () => {
-                this.dataService.deleteResource(this._bouldersAPI + boulder.Id)
+                this.dataService.deleteResource(this._areasAPI + boulder.Id)
                     .subscribe(res => {
                         _removeResult.Succeeded = res.Succeeded;
                         _removeResult.Message = res.Message;

@@ -20,25 +20,44 @@ var dataService_1 = require('../core/services/dataService');
 var utilityService_1 = require('../core/services/utilityService');
 var notificationService_1 = require('../core/services/notificationService');
 var operationResult_1 = require('../core/domain/operationResult');
-var AreaBoulders = (function (_super) {
-    __extends(AreaBoulders, _super);
-    function AreaBoulders(dataService, utilityService, notificationService, routeParam) {
+var Area = (function (_super) {
+    __extends(Area, _super);
+    function Area(dataService, utilityService, notificationService, routeParam) {
         _super.call(this, 0, 0, 0);
         this.dataService = dataService;
         this.utilityService = utilityService;
         this.notificationService = notificationService;
         this.routeParam = routeParam;
         this._areasAPI = 'api/areas/';
+        this._areasBouldersAPI = 'api/areas/boulders/';
         this._bouldersAPI = 'api/boulders/';
     }
-    AreaBoulders.prototype.ngOnInit = function () {
+    Area.prototype.ngOnInit = function () {
         this._areaId = this.routeParam.get('id');
-        this._areasAPI += this._areaId + '/boulders/';
-        this.dataService.set(this._areasAPI, 12);
+        this.getArea();
         this.getAreaBoulders();
     };
-    AreaBoulders.prototype.getAreaBoulders = function () {
+    Area.prototype.getArea = function () {
         var _this = this;
+        this.dataService.set(this._areasAPI + this._areaId, 1);
+        this.dataService.get(this._page)
+            .subscribe(function (res) {
+            var data = res.json();
+            _this._area = data.Items;
+            _this._displayingTotal = _this._boulders.length;
+            _this._page = data.Page;
+            _this._pagesCount = data.TotalPages;
+            _this._totalCount = data.TotalCount;
+        }, function (error) {
+            if (error.status == 401 || error.status == 302) {
+                _this.utilityService.navigateToSignIn();
+            }
+            console.error('Error: ' + error);
+        }, function () { return console.log(_this._boulders); });
+    };
+    Area.prototype.getAreaBoulders = function () {
+        var _this = this;
+        this.dataService.set(this._areasBouldersAPI, 12);
         this.dataService.get(this._page)
             .subscribe(function (res) {
             var data = res.json();
@@ -56,15 +75,15 @@ var AreaBoulders = (function (_super) {
             console.error('Error: ' + error);
         }, function () { return console.log(_this._boulders); });
     };
-    AreaBoulders.prototype.search = function (i) {
+    Area.prototype.search = function (i) {
         _super.prototype.search.call(this, i);
         this.getAreaBoulders();
     };
     ;
-    AreaBoulders.prototype.convertDateTime = function (date) {
+    Area.prototype.convertDateTime = function (date) {
         return this.utilityService.convertDateTime(date);
     };
-    AreaBoulders.prototype.delete = function (boulder) {
+    Area.prototype.delete = function (boulder) {
         var _this = this;
         var _removeResult = new operationResult_1.OperationResult(false, '');
         this.notificationService.printConfirmationDialog('Er du sikker på at du vil slette bulderet?', function () {
@@ -83,16 +102,15 @@ var AreaBoulders = (function (_super) {
             });
         });
     };
-    AreaBoulders = __decorate([
+    Area = __decorate([
         core_1.Component({
-            selector: 'area-boulder',
+            selector: 'area',
             providers: [notificationService_1.NotificationService],
-            templateUrl: './app/components/areaBoulders.html',
+            templateUrl: './app/components/area.html',
             directives: [router_deprecated_1.RouterLink]
         }), 
         __metadata('design:paramtypes', [dataService_1.DataService, utilityService_1.UtilityService, notificationService_1.NotificationService, router_deprecated_1.RouteParams])
-    ], AreaBoulders);
-    return AreaBoulders;
+    ], Area);
+    return Area;
 }(paginated_1.Paginated));
-exports.AreaBoulders = AreaBoulders;
-//# sourceMappingURL=areaBoulders.js.map
+exports.Area = Area;

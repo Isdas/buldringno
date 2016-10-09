@@ -1,9 +1,10 @@
 "use strict";
 var Boulder = (function () {
-    function Boulder(id, title, description, thumbnail, areaId, areaTitle, totalProblems, dateCreated) {
+    function Boulder(id, title, descriptionMain, descriptionSecondary, thumbnail, areaId, areaTitle, totalProblems, dateCreated) {
         this.Id = id;
         this.Title = title;
-        this.Description = description;
+        this.DescriptionMain = descriptionMain;
+        this.DescriptionSecondary = descriptionSecondary;
         this.Thumbnail = thumbnail;
         this.AreaId = areaId;
         this.AreaTitle = areaTitle;

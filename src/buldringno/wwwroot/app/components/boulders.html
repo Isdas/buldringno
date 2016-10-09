@@ -33,7 +33,7 @@
             <p>
                 Problemer: <span class="badge">{{boulder.TotalProblems}}</span>
             </p>
-            <p>{{boulder.Description}}</p>
+            <p>{{boulder.DescriptionMain}}</p>
             <a *ngIf="boulder.TotalProblems > 0" class="btn btn-primary" [routerLink]="[routes.boulderProblems.name, {id: boulder.Id}]">Se problemer</a>
         </div>
         <hr/>
