@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/Isdas/buldringno.png?label=ready&title=Ready)](https://waffle.io/Isdas/buldringno)
 **The buldring.no project**
 
 For a long time there has been no good sites for bouldering in Norway. This projects main objective with this project is to change that.
